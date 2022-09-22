@@ -1,102 +1,27 @@
-import styled from "styled-components";
+import { useEffect } from "react";
 import List from "../components/List";
 import PageHeader from "../components/PageHeader";
 import PrevNext from "../components/PrevNext";
-
-const Head = styled.div`
-  margin-bottom: 20px;
-  margin-top: 100px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #ccc;
-`;
-
-const SkillsBox = styled.div`
-  display: flex;
-  gap: 7px;
-`;
-const SkillBadge = styled.span`
-  display: inline-block;
-  font-size: 13px;
-  background: #e9ecef;
-  padding: 3px 7px;
-  border-radius: 2px;
-`;
-
-const Container = styled.div`
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 16px;
-  padding-bottom: 50px;
-`;
-
-const ProjectSpan = styled.span`
-  display: block;
-  color: #999;
-  margin-bottom: 5px;
-`;
-const ProjectTitle = styled.h1`
-  font-size: 2.25rem;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-`;
-
-const ProjectText = styled.p`
-  line-height: 1.6;
-  margin-bottom: 15px;
-`;
-
-const MainImgBox = styled.img`
-  max-width: 800px;
-  margin: 0 auto;
-  display: block;
-`;
-
-const MainLinkDesc = styled.p`
-  font-size: 14px;
-  color: #888;
-  text-align: center;
-  margin-bottom: 30px;
-`;
-
-const TextTitle = styled.h3`
-  font-size: 30px;
-  font-weight: 800;
-  margin: 10px 0;
-  margin-top: 60px;
-`;
-
-const ProjectImg = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 20px;
-`;
-
-const Code = styled.code`
-  background: #e9ecef;
-  padding: 3px 5px;
-  font-size: 14px;
-  border-radius: 3px;
-  cursor: default;
-`;
+import {
+  Container,
+  ProjectText,
+  ProjectImg,
+  TextTitle,
+  MainImgBox,
+  MainLinkDesc,
+  Code,
+} from "../styles/styled-components";
+import CommonDocu from "../components/CommonDocu";
 
 function SeoulBund() {
-  window.scrollTo({ top: 0 });
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <div>
-      <PageHeader />
+      <CommonDocu title="서울번드" arr={["HTML", "CSS", "Javascript"]} />
+
       <Container>
-        <Head>
-          <ProjectSpan>프로젝트 설명</ProjectSpan>
-          <ProjectTitle>서울번드</ProjectTitle>
-          <SkillsBox>
-            <SkillBadge>HTML</SkillBadge>
-            <SkillBadge>CSS</SkillBadge>
-            <SkillBadge>JavaScript</SkillBadge>
-            <SkillBadge>firebase</SkillBadge>
-          </SkillsBox>
-        </Head>
-        <List />
         <a
           href="https://jaeeedev.github.io/work"
           target={"_blank"}

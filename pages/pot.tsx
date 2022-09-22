@@ -1,5 +1,3 @@
-import List from "../components/List";
-import PageHeader from "../components/PageHeader";
 import PrevNext from "../components/PrevNext";
 import { useEffect } from "react";
 import {
