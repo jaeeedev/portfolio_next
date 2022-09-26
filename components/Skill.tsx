@@ -51,7 +51,7 @@ const SkillImg = styled.img.attrs({ alt: "기술 이미지" })`
 
 const SkillText = styled.p`
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 16px;
   word-break: keep-all;
 `;
 
@@ -112,7 +112,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
             <SkillText>
               ES6 문법 사용
               <br />
-              비동기 문법과 HTTP 요청
+              비동기적으로 API 요청을 할 수 있음
             </SkillText>
           </SkillItem>
           <SkillItem>
@@ -122,16 +122,39 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
               onMouseLeave={down}
             />
             <SkillText>
-              스타일드 컴포넌트로 prop에 따른 조건부 스타일링
+              스타일드 컴포넌트 사용
               <br />
-              리액트 라우터를 활용하여 다중 페이지 구현
+              리액트 라우터를 통한 다중 페이지 구현
               <br />
-              리덕스 툴킷을 통한 전역 상태 관리 경험
+              리덕스를 통한 전역 상태 관리 경험
             </SkillText>
           </SkillItem>
 
           <div style={{ width: "100%" }}>
             <Title>STUDYING</Title>
+
+            <SkillBox>
+              <SkillItem>
+                <SkillImg
+                  src="/imgs/ts.png"
+                  onMouseEnter={up}
+                  onMouseLeave={down}
+                />
+                <SkillText>
+                  포트폴리오 페이지에 적용되어 있으며 현재 공부중입니다.
+                </SkillText>
+              </SkillItem>
+              <SkillItem>
+                <SkillImg
+                  src="/imgs/nodejs.png"
+                  onMouseEnter={up}
+                  onMouseLeave={down}
+                />
+                <SkillText>
+                  프로젝트(서울번드 리액트)에 적용되어 있으며 현재 공부중입니다.
+                </SkillText>
+              </SkillItem>
+            </SkillBox>
           </div>
         </SkillBox>
       </SkillContents>

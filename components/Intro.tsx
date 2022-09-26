@@ -96,7 +96,7 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
           <GreetDetail>
             코드를 통한 결과물을 빠르게 눈으로 확인할 수 있는 프론트엔드에
             재미를 느끼고 개발을 시작하게 되었습니다. 더 좋은 코드가 무엇일지
-            항상 고민하고 공부합니다. 성장가능성이 큰 개발자가 되고 싶습니다.
+            항상 고민하고 공부합니다.
             <br />
           </GreetDetail>
         </IntroGreetBox>

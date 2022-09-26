@@ -229,7 +229,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
-            <TextDetail>HTML, CSS, JS, firebase</TextDetail>
+            <TextDetail>HTML, CSS, JS</TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
@@ -267,14 +267,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle mb={"20px"}>서울번드 리액트</TextTitle>
             <TextDetail>
               기존 자바스크립트 프로젝트를 조금 변경하여 리액트로 제작했습니다.
-              리덕스를 통해 전역 상태에 장바구니 데이터와 관련 함수를
-              관리합니다. 스타일드 컴포넌트로 스타일링하고 리액트 라우터로
-              페이지를 나눴습니다.
+              로그인, 장바구니, 서치 기능 등을 구현했습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
             <TextDetail>
-              React, React-router, Redux-toolkit, Styled-components
+              React, React-router, Redux-toolkit, Styled-components, Node.js,
+              MongoDB
             </TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
@@ -315,7 +314,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           <ProjectText>
             <TextTitle mb={"20px"}>포트폴리오 페이지</TextTitle>
             <TextDetail>
-              현재 포트폴리오 페이지입니다. 학습을 위하여 Next.js와
+              현재 포트폴리오 페이지입니다. 공부하는 목적으로 Next.js와
               타입스크립트로 제작되었습니다.
             </TextDetail>
 

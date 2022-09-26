@@ -42,7 +42,7 @@ export const ProjectTitle = styled.h1`
 
 export const ProjectText = styled.p`
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin: 15px 0;
 `;
 
 export const ProjectImg = styled(Image)`
@@ -86,4 +86,13 @@ export const TextTitle = styled.h3`
 export const GoToGithub = styled.a`
   color: #8b2b4b;
   text-decoration: underline;
+`;
+
+export const LinksContainer = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
 `;
