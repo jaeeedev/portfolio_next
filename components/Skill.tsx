@@ -53,6 +53,10 @@ const SkillText = styled.p`
   line-height: 1.6;
   font-size: 16px;
   word-break: keep-all;
+
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
 `;
 
 function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {

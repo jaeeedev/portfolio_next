@@ -15,6 +15,7 @@ const IntroContents = styled.section`
     flex-direction: column;
     gap: 50px;
     align-items: flex-start;
+    margin-bottom: 0;
   }
   @media screen and (min-width: 1500px) {
     margin-top: 80px;
@@ -30,6 +31,9 @@ const GreetText = styled.h2`
   font-size: 47px;
   font-weight: 700;
   word-break: keep-all;
+  @media screen and (max-width: 500px) {
+    font-size: 40px;
+  }
 `;
 
 const GreetDetail = styled.p`
@@ -37,6 +41,9 @@ const GreetDetail = styled.p`
   font-size: 18px;
   line-height: 1.4;
   word-break: keep-all;
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const InfoBox = styled.div`
@@ -58,9 +65,17 @@ const InfoTitle = styled.span`
   margin-right: 20px;
   font-weight: 700;
   font-size: 20px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
 `;
 const InfoDetail = styled.span`
   font-size: 18px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const DecoCircle = styled.div`
@@ -76,11 +91,6 @@ const DecoCircle = styled.div`
   transition: all 0.5s;
 `;
 
-const HoverText = styled.span`
-  font-size: 47px;
-  font-weight: 700;
-`;
-
 function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
   const ref = useObserve(boldHandler, 0);
 
@@ -90,7 +100,7 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
         <DecoCircle />
         <IntroGreetBox>
           <GreetText>안녕하세요</GreetText>
-          <HoverText>성장하는</HoverText>
+          <GreetText>성장하는</GreetText>
           <GreetText>프론트엔드 개발자</GreetText>
           <GreetText>박지은입니다.</GreetText>
           <GreetDetail>

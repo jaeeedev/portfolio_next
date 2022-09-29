@@ -10,6 +10,7 @@ export const TitleHead = styled.div`
 
 export const SkillsBox = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 7px;
 `;
 export const SkillBadge = styled.span`
