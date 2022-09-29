@@ -55,13 +55,6 @@ const SkillText = styled.p`
   word-break: keep-all;
 `;
 
-const SubSkillBox = styled.div`
-  width: 100%;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-`;
-
 function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
   const ref = useObserve(boldHandler, 1);
 

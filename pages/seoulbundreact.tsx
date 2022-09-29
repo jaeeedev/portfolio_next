@@ -31,7 +31,7 @@ function SbReact() {
 
       <Container>
         <a
-          href="https://illustrious-manatee-d6fc25.netlify.app/"
+          href="https://reactsbr.herokuapp.com/"
           target={"_blank"}
           rel="noreferrer"
           style={{ marginRight: "10px" }}
@@ -137,6 +137,14 @@ function SbReact() {
         </ProjectText>
 
         <ProjectImg
+          src="/imgs/valid.gif"
+          alt="로그인 화면"
+          layout="responsive"
+          width={13}
+          height={8}
+        />
+        <br />
+        <ProjectImg
           src="/imgs/login.gif"
           alt="로그인 화면"
           layout="responsive"
@@ -155,8 +163,20 @@ function SbReact() {
           있습니다. 로그인에 성공할 경우 토큰을 발급하고 쿠키에 저장한 후 전역
           상태의 isLoggedIn 을 true로 변경하고 로그인 버튼을 로그아웃 버튼으로
           변경합니다. 로그아웃 시에는 반대로 쿠키에서 토큰을 지우고 isLoggedIn을
-          false로 바꾸어 로그인 버튼이 나타나게 합니다. (개인정보때문에 input의
-          autocomplete를 꺼둔 상태로 캡쳐하였습니다.)
+          false로 바꾸어 로그인 버튼이 나타나게 합니다.
+        </ProjectText>
+
+        <TextTitle>배포</TextTitle>
+        <ProjectText>
+          기존에는 Netlify 로 배포를 했던 상태였지만 서버단 코드를 추가하면서
+          heroku를 이용해보게 됐습니다. 다른 파일의 변수를 require 하는 부분에서
+          오타가 있었는데 eslint에 잡히지 않고 로컬호스트에서도 문제없이
+          동작하는 바람에 시간을 한참 쏟았고, 배포 이후에도 URL을 직접
+          작성하거나 새로고침을 할때마다 404 에러가 발생해 절망적인 시간을
+          보냈습니다. 한참을 찾아다니다 이 문제는 SPA페이지의 특징적인
+          문제점이라는것을 알게 되었습니다. 이후 모든({"*"}) 경로에서 index.html
+          파일을 찾을 수 있도록 코드를 바꿔주고 정적 파일 경로도 제대로
+          바꾸어주니 정상적으로 동작하는 페이지를 볼 수 있었습니다.
         </ProjectText>
 
         <TextTitle>회고</TextTitle>
@@ -187,14 +207,14 @@ function SbReact() {
           많이 남습니다.
           <br />
           <br />
-          하지만 새로운 기술들을 잔뜩 적용하면서 너무 즐거웠던 프로젝트였습니다.
+          새로운 기술들을 잔뜩 적용하면서 너무 즐거웠던 프로젝트였습니다.
           <Code>리액트 라우터</Code>를 통해 접속할 수 있는 페이지가 무한히
           늘어났고, <Code>리덕스</Code>를 통해 모든 컴포넌트에서 쉽게 상태를
           꺼내 쓸 수 있었습니다. 미지의 세계였던 <Code>Node.js</Code> 도{" "}
           <Code>Express</Code>를 곁들여 사용해보게 되었습니다. 낯설지만 서버를
           구축하고 배운다는것이 뿌듯하고 너무 재미있었습니다. 개발은 배운 만큼
-          할 수 있는 것들이 늘어나서인지 새로운 기술을 배우는 것이 항상 재밌다고
-          느낍니다.
+          할 수 있는 것들이 늘어난다는걸 크게 체감하고 더 열심히 공부해야겠다는
+          동기부여가 되는 시간이었습니다.
         </ProjectText>
 
         <PrevNext

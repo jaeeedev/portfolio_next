@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import PageHeader from "./PageHeader";
 import {
   Container,
@@ -13,9 +13,10 @@ import List from "../components/List";
 function CommonDocu({ arr, title }: { arr: string[]; title: string }) {
   return (
     <>
-      <Head>
-        <title>Jieun Portfolio | {title}</title>
-      </Head>
+      <NextSeo
+        title={`Jieun Portfolio | ${title}`}
+        description={`프론트엔드 박지은 포트폴리오 | ${title}`}
+      />
       <PageHeader />
       <Container>
         <TitleHead>

@@ -8,6 +8,11 @@ ${normalize}
  padding:0;
  box-sizing:border-box;   
  font-family: Pretendard;
+
+ &::selection {
+    background: blue;
+    color: white;
+ }
 }
 a { cursor: pointer;
     text-decoration: none; }

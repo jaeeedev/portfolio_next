@@ -95,8 +95,8 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
           <GreetText>박지은입니다.</GreetText>
           <GreetDetail>
             코드를 통한 결과물을 빠르게 눈으로 확인할 수 있는 프론트엔드에
-            재미를 느끼고 개발을 시작하게 되었습니다. 더 좋은 코드가 무엇일지
-            항상 고민하고 공부합니다.
+            재미를 느끼고 개발을 시작하게 되었습니다. 항상 더 잘하고 싶은
+            마음으로 공부하고 있습니다.
             <br />
           </GreetDetail>
         </IntroGreetBox>

@@ -13,7 +13,7 @@ const Li = styled.li`
   font-weight: ${({ bold }: { bold: boolean }) => bold && "700"};
   font-size: ${({ bold }) => bold && "17px"};
   margin-left: 20px;
-  padding: 3px 0;
+  padding: 5px 0;
 `;
 
 const ListTitle = styled.h3`

@@ -251,7 +251,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[4] = el)}>
           <StyledA
-            href="https://illustrious-manatee-d6fc25.netlify.app/"
+            href="https://reactsbr.herokuapp.com/"
             target={"_blank"}
             rel="noreferrer"
           >
@@ -299,7 +299,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[5] = el)}>
           <StyledA
-            href="https://illustrious-manatee-d6fc25.netlify.app/"
+            href="https://portfolio-next-rxye.vercel.app/"
             target={"_blank"}
             rel="noreferrer"
           >
@@ -329,7 +329,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
                 </a>
               </ProjectLink>
               <a
-                href="https://github.com/jaeeedev/seoulbund"
+                href="https://github.com/jaeeedev/portfolio_next"
                 target={"_blank"}
                 rel="noreferrer"
               >

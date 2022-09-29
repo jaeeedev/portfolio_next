@@ -6,22 +6,18 @@ import Intro from "../components/Intro";
 import Skill from "../components/Skill";
 import Footer from "../components/Footer";
 import Project from "../components/Project";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 const Home: NextPage = () => {
   const [boldIndex, setBoldIndex] = useState(0);
 
   return (
     <div>
-      <Head>
-        <title>Jieun Portfolio</title>
-        <meta
-          name="description"
-          content="프론트엔드 개발자 박지은 포트폴리오 페이지입니다."
-        />
-        {/* <meta property="og:type" content="website" />
-        <meta property="og:title" content="Jieun Portfolio" /> */}
-      </Head>
+      <NextSeo
+        title="Jieun Portfolio"
+        description="프론트엔드 개발자 박지은 포트폴리오 페이지입니다."
+      />
+
       <GlobalStyle />
 
       <Header boldIndex={boldIndex} />
