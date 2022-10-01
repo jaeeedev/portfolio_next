@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -91,7 +91,7 @@ const PjText = styled.p`
 function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
   const projectRef = useRef<null | HTMLDivElement[]>([]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const projectHandler: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
         const ent = entry.target as HTMLDivElement;
