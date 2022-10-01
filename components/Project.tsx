@@ -117,7 +117,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         observer.observe(project);
       }
     });
-  }, [projectRef]);
+  });
 
   return (
     <div>
