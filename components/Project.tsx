@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
-import { useEffect, useMemo, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,6 +14,7 @@ const ProjectContents = styled.section`
 
 const Title = styled.h3`
   font-size: 35px;
+  margin-bottom: 25px;
 `;
 
 const ProjectItemBox = styled.div`
@@ -41,12 +42,19 @@ const ProjectImg = styled(Image)`
   }
 `;
 
-const StyledA = styled.a`
+const StyledA = styled.a.attrs({
+  target: "_blank",
+  rel: "noreferrer",
+})`
   display: block;
   position: relative;
   width: 60%;
   min-height: 250px;
   height: fit-content;
+
+  @media screen and (max-width: 550px) {
+    min-height: 0;
+  }
   @media screen and (max-width: 850px) {
     width: 100%;
   }
@@ -77,15 +85,16 @@ const TextDetail = styled.p<{ fz?: string }>`
 const PjText = styled.p`
   font-size: 15px;
   margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
-  const projectRef = useRef<any>([]);
+  const projectRef = useRef<null | HTMLDivElement[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const projectHandler: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
-        const ent = entry.target as HTMLElement;
+        const ent = entry.target as HTMLDivElement;
         if (entry.isIntersecting) {
           ent.style.opacity = "1";
           ent.style.transform = "translateY(10px)";
@@ -103,12 +112,12 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
       threshold: 0.6,
     });
 
-    projectRef.current?.forEach((project: HTMLElement) => {
+    projectRef.current?.forEach((project) => {
       if (project) {
         observer.observe(project);
       }
     });
-  });
+  }, [projectRef]);
 
   return (
     <div>
@@ -119,12 +128,14 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           ✔ <CgNotes /> 아이콘을 클릭하면 상세 설명 페이지로 이동합니다.
         </PjText>
 
-        <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
-          <StyledA
-            href="https://jaeeedev.github.io/todo"
-            target={"_blank"}
-            rel="noreferrer"
-          >
+        <ProjectItemBox
+          ref={(el) => {
+            if (el && projectRef.current) {
+              projectRef.current[0] = el;
+            }
+          }}
+        >
+          <StyledA href="https://jaeeedev.github.io/todo">
             <ProjectImg
               src="/imgs/todomain.gif"
               alt="투두리스트 썸네일"
@@ -148,14 +159,18 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <ProjectLink href="/todolist" rel="noreferrer">
-                <a target={"_blank"} style={{ marginRight: "10px" }}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ marginRight: "10px" }}
+                >
                   <CgNotes />
                 </a>
               </ProjectLink>
 
               <a
                 href="https://github.com/jaeeedev/todo"
-                target={"_blank"}
+                target="_blank"
                 rel="noreferrer"
               >
                 <BsGithub />
@@ -163,12 +178,15 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
-        <ProjectItemBox ref={(el) => (projectRef.current[1] = el)}>
-          <StyledA
-            href="https://jaeeedev.github.io/pot"
-            target={"_blank"}
-            rel="noreferrer"
-          >
+
+        <ProjectItemBox
+          ref={(el) => {
+            if (el && projectRef.current) {
+              projectRef.current[1] = el;
+            }
+          }}
+        >
+          <StyledA href="https://jaeeedev.github.io/pot">
             <ProjectImg
               src="/imgs/pot01.jpg"
               alt="pot 썸네일"
@@ -191,14 +209,18 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <ProjectLink href="/pot" target={"_blank"} rel="noreferrer">
-                <a style={{ marginRight: "10px" }}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ marginRight: "10px" }}
+                >
                   <CgNotes />
                 </a>
               </ProjectLink>
 
               <a
                 href="https://github.com/jaeeedev/pot"
-                target={"_blank"}
+                target="_blank"
                 rel="noreferrer"
               >
                 <BsGithub />
@@ -206,12 +228,14 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
-        <ProjectItemBox ref={(el) => (projectRef.current[3] = el)}>
-          <StyledA
-            href="https://jaeeedev.github.io/work"
-            target={"_blank"}
-            rel="noreferrer"
-          >
+        <ProjectItemBox
+          ref={(el) => {
+            if (el && projectRef.current) {
+              projectRef.current[2] = el;
+            }
+          }}
+        >
+          <StyledA href="https://jaeeedev.github.io/work">
             <ProjectImg
               src="/imgs/sbmain.png"
               alt="서울번드 썸네일"
@@ -234,14 +258,18 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <ProjectLink href="/seoulbund" target={"_blank"} rel="noreferrer">
-                <a style={{ marginRight: "10px" }}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ marginRight: "10px" }}
+                >
                   <CgNotes />
                 </a>
               </ProjectLink>
 
               <a
                 href="https://github.com/jaeeedev/work"
-                target={"_blank"}
+                target="_blank"
                 rel="noreferrer"
               >
                 <BsGithub />
@@ -249,12 +277,14 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
-        <ProjectItemBox ref={(el) => (projectRef.current[4] = el)}>
-          <StyledA
-            href="https://reactsbr.herokuapp.com/"
-            target={"_blank"}
-            rel="noreferrer"
-          >
+        <ProjectItemBox
+          ref={(el) => {
+            if (el && projectRef.current) {
+              projectRef.current[3] = el;
+            }
+          }}
+        >
+          <StyledA href="https://reactsbr.herokuapp.com/">
             <ProjectImg
               src="/imgs/sbrmain.png"
               alt="서울번드 리액트 썸네일"
@@ -280,16 +310,20 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextDetail fz={"23px"}>
               <ProjectLink
                 href="seoulbundreact"
-                target={"_blank"}
+                target="_blank"
                 rel="noreferrer"
               >
-                <a style={{ marginRight: "10px" }}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ marginRight: "10px" }}
+                >
                   <CgNotes />
                 </a>
               </ProjectLink>
               <a
                 href="https://github.com/jaeeedev/seoulbund"
-                target={"_blank"}
+                target="_blank"
                 rel="noreferrer"
               >
                 <BsGithub />
@@ -297,12 +331,14 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
-        <ProjectItemBox ref={(el) => (projectRef.current[5] = el)}>
-          <StyledA
-            href="https://portfolio-next-rxye.vercel.app/"
-            target={"_blank"}
-            rel="noreferrer"
-          >
+        <ProjectItemBox
+          ref={(el) => {
+            if (el && projectRef.current) {
+              projectRef.current[4] = el;
+            }
+          }}
+        >
+          <StyledA href="https://portfolio-next-rxye.vercel.app/">
             <ProjectImg
               src="/imgs/intromain.png"
               alt="포폴페이지 썸네일"
@@ -324,13 +360,17 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <ProjectLink href="portfolio" target={"_blank"} rel="noreferrer">
-                <a style={{ marginRight: "10px" }}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ marginRight: "10px" }}
+                >
                   <CgNotes />
                 </a>
               </ProjectLink>
               <a
                 href="https://github.com/jaeeedev/portfolio_next"
-                target={"_blank"}
+                target="_blank"
                 rel="noreferrer"
               >
                 <BsGithub />

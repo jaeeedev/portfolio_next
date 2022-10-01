@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from "react";
-import styled, { StyledComponent } from "styled-components";
+import styled from "styled-components";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import useObserve from "../utils/useObserve";

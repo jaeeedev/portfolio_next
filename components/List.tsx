@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 
 const Container = styled.div`
   background: #f3f3f3;
@@ -21,44 +20,35 @@ const ListTitle = styled.h3`
   margin-bottom: 20px;
 `;
 
+const ListLink = styled(Link)`
+  text-decoration: none;
+  padding: 5px 0;
+  display: block;
+`;
+
 function List() {
-  const [current, setCurrent] = useState<string>("");
   const router = useRouter();
   const param = router.pathname.replace("/", "");
-  useEffect(() => {
-    setCurrent(param);
-  }, [current, param]);
-
   const opt = { textDecoration: "none", padding: "5px 0", display: "block" };
 
   return (
     <Container>
       <ListTitle>프로젝트 목록</ListTitle>
       <ol>
-        <Li bold={current === "todolist"}>
-          <Link href="/todolist" style={opt}>
-            투두리스트
-          </Link>
+        <Li bold={param === "todolist"}>
+          <ListLink href="/todolist">투두리스트</ListLink>
         </Li>
-        <Li bold={current === "pot"}>
-          <Link href="/pot" style={opt}>
-            pot
-          </Link>
+        <Li bold={param === "pot"}>
+          <ListLink href="/pot">pot</ListLink>
         </Li>
-        <Li bold={current === "seoulbund"}>
-          <Link href="/seoulbund" style={opt}>
-            서울번드
-          </Link>
+        <Li bold={param === "seoulbund"}>
+          <ListLink href="/seoulbund">서울번드</ListLink>
         </Li>
-        <Li bold={current === "seoulbundreact"}>
-          <Link href="/seoulbundreact" style={opt}>
-            서울번드 리액트
-          </Link>
+        <Li bold={param === "seoulbundreact"}>
+          <ListLink href="/seoulbundreact">서울번드 리액트</ListLink>
         </Li>
-        <Li bold={current === "portfolio"}>
-          <Link href="/portfolio" style={opt}>
-            포트폴리오 페이지
-          </Link>
+        <Li bold={param === "portfolio"}>
+          <ListLink href="/portfolio">포트폴리오 페이지</ListLink>
         </Li>
       </ol>
     </Container>

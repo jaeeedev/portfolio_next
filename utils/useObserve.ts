@@ -19,7 +19,7 @@ function useObserve(boldHandler: (index: number) => void, index: number) {
     if (ref.current) {
       io.observe(ref.current);
     }
-  });
+  }, []);
 
   return ref;
 }
