@@ -16,6 +16,19 @@ function CommonDocu({ arr, title }: { arr: string[]; title: string }) {
       <NextSeo
         title={`Jieun Portfolio | ${title}`}
         description={`프론트엔드 박지은 포트폴리오 | ${title}`}
+        openGraph={{
+          type: "website",
+          url: "https://www.jaeeedev.com/",
+          title: `Jieun Portfolio | ${title}`,
+          description: `프론트엔드 박지은 포트폴리오 | ${title}`,
+          images: [
+            {
+              url: "/imgs/intromain.png",
+              width: 800,
+              height: 400,
+            },
+          ],
+        }}
       />
       <PageHeader />
       <Container>
