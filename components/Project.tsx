@@ -297,7 +297,8 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle mb={"20px"}>서울번드 리액트</TextTitle>
             <TextDetail>
               기존 자바스크립트 프로젝트를 조금 변경하여 리액트로 제작했습니다.
-              로그인, 장바구니, 서치 기능 등을 구현했습니다.
+              로그인, 장바구니, 서치 기능 등을 구현했습니다. (헤로쿠 배포로 인해
+              초기 접속 시 딜레이가 있을 수 있습니다.)
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>

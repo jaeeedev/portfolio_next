@@ -9,8 +9,11 @@ import {
   SkillBadge,
 } from "../styles/styled-components";
 import List from "../components/List";
+import { useRouter } from "next/router";
 
 function CommonDocu({ arr, title }: { arr: string[]; title: string }) {
+  const router = useRouter();
+
   return (
     <>
       <NextSeo
@@ -18,7 +21,7 @@ function CommonDocu({ arr, title }: { arr: string[]; title: string }) {
         description={`프론트엔드 박지은 포트폴리오 | ${title}`}
         openGraph={{
           type: "website",
-          url: "https://www.jaeeedev.com/",
+          url: `https://www.jaeeedev.com${router.pathname}`,
           title: `Jieun Portfolio | ${title}`,
           description: `프론트엔드 박지은 포트폴리오 | ${title}`,
           images: [
