@@ -15,6 +15,19 @@ const Home: NextPage = () => {
       <NextSeo
         title="Jieun Portfolio"
         description="프론트엔드 개발자 박지은 포트폴리오 페이지입니다."
+        openGraph={{
+          type: "website",
+          url: "https://www.jaeeedev.com/",
+          title: "Jieun Portfolio",
+          description: "프론트엔드 개발자 박지은 포트폴리오 페이지입니다.",
+          images: [
+            {
+              url: "/imgs/intromain.png",
+              width: 800,
+              height: 400,
+            },
+          ],
+        }}
       />
 
       <Header boldIndex={boldIndex} />
