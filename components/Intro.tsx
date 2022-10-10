@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import useObserve from "../utils/useObserve";
 
 const IntroContents = styled.section`
@@ -57,7 +58,7 @@ const InfoBox = styled.div`
 `;
 const Info = styled.div`
   display: flex;
-  line-height: 1.7;
+  line-height: 1.9;
   align-items: center;
 `;
 const InfoTitle = styled.span`
@@ -142,6 +143,20 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
               >
                 <BsGithub
                   style={{ fontSize: "23px", transform: "translateY(5px)" }}
+                />
+              </a>
+            </InfoDetail>
+          </Info>
+          <Info>
+            <InfoTitle>블로그</InfoTitle>
+            <InfoDetail>
+              <a
+                href="https://jaypa.tistory.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaExternalLinkAlt
+                  style={{ fontSize: "21px", transform: "translateY(3px)" }}
                 />
               </a>
             </InfoDetail>
