@@ -118,8 +118,8 @@ function Portfolio() {
           페이지 분리가 되어있었는데, 넥스트는 파일 기반의 라우팅을 제공하고
           있기 때문에 pages 폴더로 컴포넌트들을 옮겨주었습니다. <br />
           뒤로가기, 앞으로 가기를 이용하여 계속 페이지를 이동하는 것이 귀찮다는
-          것을 알고 있기 때문에 <Code>target=\"_blank\"</Code> 속성을 줘서 새
-          창이 뜨도록 했습니다.
+          것을 알고 있기 때문에 <Code>target=&quot;_blank&quot;</Code> 속성을
+          줘서 새 창이 뜨도록 했습니다.
         </ProjectText>
 
         <AvifImg src="/imgs/og.avif" alt="오픈그래프 적용 썸네일" />
