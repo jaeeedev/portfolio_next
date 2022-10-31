@@ -303,7 +303,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>사용 기술</TextTitle>
             <TextDetail>
-              React, React-router, Redux-toolkit, Styled-components, Node.js,
+              React, React-router, Redux-toolkit, Styled-components, Express,
               MongoDB
             </TextDetail>
 

@@ -122,10 +122,6 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
             <InfoDetail>1997.06.13</InfoDetail>
           </Info>
           <Info>
-            <InfoTitle>학력</InfoTitle>
-            <InfoDetail>부경대학교 경영학부 졸업</InfoDetail>
-          </Info>
-          <Info>
             <InfoTitle>연락처</InfoTitle>
             <InfoDetail>010-2502-4223</InfoDetail>
           </Info>

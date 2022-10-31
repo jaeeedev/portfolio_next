@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Header from "../components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Intro from "../components/Intro";
 import Skill from "../components/Skill";
 import Footer from "../components/Footer";
@@ -9,6 +9,18 @@ import { NextSeo } from "next-seo";
 
 const Home: NextPage = () => {
   const [boldIndex, setBoldIndex] = useState(0);
+
+  useEffect(() => {
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+      const win: Window = window;
+      win.location = "microsoft-edge:" + window.location;
+      //차단되어 있으면 안열림
+
+      setTimeout(function () {
+        win.location = "https://go.microsoft.com/fwlink/?linkid=2135547";
+      }, 1);
+    }
+  }, []);
 
   return (
     <div>
