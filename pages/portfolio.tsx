@@ -11,12 +11,12 @@ import {
   ProjectImg,
 } from "../styles/styled-components";
 import CommonDocu from "../components/CommonDocu";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const AvifImg = styled.img`
-width: 100%;
-height: 100%;
-`
+  width: 100%;
+  height: 100%;
+`;
 
 function Portfolio() {
   return (
@@ -118,13 +118,17 @@ function Portfolio() {
           페이지 분리가 되어있었는데, 넥스트는 파일 기반의 라우팅을 제공하고
           있기 때문에 pages 폴더로 컴포넌트들을 옮겨주었습니다. <br />
           뒤로가기, 앞으로 가기를 이용하여 계속 페이지를 이동하는 것이 귀찮다는
-          것을 알고 있기 때문에 <Code>target="_blank"</Code> 속성을 줘서 새 창이
-          뜨도록 했습니다.
+          것을 알고 있기 때문에 <Code>target=\"_blank\"</Code> 속성을 줘서 새
+          창이 뜨도록 했습니다.
         </ProjectText>
 
-        <AvifImg src="/imgs/og.avif" alt="오픈그래프 적용 썸네일"  />
+        <AvifImg src="/imgs/og.avif" alt="오픈그래프 적용 썸네일" />
         <ProjectText>
-          검색엔진 최적화를 위한 메타 태그 작성을 쉽게 하기 위해서 <Code>next-seo</Code> 라는 라이브러리를 사용했습니다. 속성에 객체를 넣어주는 형태로 필요한 정보들을 제공할 수 있어 간편합니다. 각 페이지에 맞는 타이틀과 설명이 나타나도록 설정해 주었고 오픈그래프도 적용하여 외부로 링크를 보낼 때 적절한 정보가 나타나도록 했습니다.
+          검색엔진 최적화를 위한 메타 태그 작성을 쉽게 하기 위해서{" "}
+          <Code>next-seo</Code> 라는 라이브러리를 사용했습니다. 속성에 객체를
+          넣어주는 형태로 필요한 정보들을 제공할 수 있어 간편합니다. 각 페이지에
+          맞는 타이틀과 설명이 나타나도록 설정해 주었고 오픈그래프도 적용하여
+          외부로 링크를 보낼 때 적절한 정보가 나타나도록 했습니다.
         </ProjectText>
 
         <TextTitle>회고</TextTitle>
