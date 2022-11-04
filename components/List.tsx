@@ -38,8 +38,8 @@ function List() {
         <Li bold={param === "todolist"}>
           <ListLink href="/todolist">투두리스트</ListLink>
         </Li>
-        <Li bold={param === "pot"}>
-          <ListLink href="/pot">pot</ListLink>
+        <Li bold={param === "pepsi"}>
+          <ListLink href="/pepsi">ZERO PEPSI FINDER</ListLink>
         </Li>
         <Li bold={param === "seoulbund"}>
           <ListLink href="/seoulbund">서울번드</ListLink>

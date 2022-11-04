@@ -106,11 +106,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
               onMouseEnter={up}
               onMouseLeave={down}
             />
-            <SkillText>
-              ES6 문법 사용
-              <br />
-              비동기적으로 API 요청을 할 수 있음
-            </SkillText>
+            <SkillText>ES6 문법 사용</SkillText>
           </SkillItem>
           <SkillItem>
             <SkillImg
@@ -138,7 +134,8 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
                   onMouseLeave={down}
                 />
                 <SkillText>
-                  포트폴리오 페이지에 적용되어 있으며 현재 공부중입니다.
+                  포트폴리오 페이지, 프로젝트(ZERO PEPSI FINDER)에 적용되어
+                  있으며 현재 공부중입니다.
                 </SkillText>
               </SkillItem>
               <SkillItem>
@@ -148,7 +145,8 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
                   onMouseLeave={down}
                 />
                 <SkillText>
-                  프로젝트(서울번드 리액트)에 적용되어 있으며 현재 공부중입니다.
+                  프로젝트(서울번드 리액트, ZERO PEPSI FINDER)에 적용되어 있으며
+                  현재 공부중입니다.
                 </SkillText>
               </SkillItem>
             </SkillBox>

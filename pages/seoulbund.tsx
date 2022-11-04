@@ -173,9 +173,9 @@ function SeoulBund() {
         </ProjectText>
 
         <PrevNext
-          prev="pot"
+          prev="pepsi"
           next="seoulbundreact"
-          pText="Pot"
+          pText="ZERO PEPSI FINDER"
           nText="서울번드 리액트"
         />
       </Container>

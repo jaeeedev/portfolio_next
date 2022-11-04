@@ -186,10 +186,10 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="https://jaeeedev.github.io/pot">
+          <StyledA href="https://pepsi-finder.herokuapp.com/">
             <ProjectImg
-              src="/imgs/pot01.jpg"
-              alt="pot 썸네일"
+              src="/imgs/pepsimain.png"
+              alt="펩시파인더 썸네일"
               layout="responsive"
               width={2}
               height={1}
@@ -197,18 +197,22 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           </StyledA>
 
           <ProjectText>
-            <TextTitle mb={"20px"}>pot</TextTitle>
+            <TextTitle mb={"20px"}>ZERO PEPSI FINDER</TextTitle>
             <TextDetail>
-              가상의 웹사이트를 기획하여 퍼블리싱한 웹페이지입니다. 반응형으로
-              제작되었습니다.
+              제로 펩시의 편의점별 할인 정보(1+1, 2+1)를 알려주는 페이지입니다.
+              다크모드와 라이트모드를 지원합니다.
+              <br />
+              (헤로쿠 배포로 인해 초기 접속 시 딜레이가 있을 수 있습니다.)
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
-            <TextDetail>HTML, CSS, JS, jQuery</TextDetail>
+            <TextDetail>
+              React, TypeScript, Styled-components, JavaScript, Node.js
+            </TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <ProjectLink href="/pot" target={"_blank"} rel="noreferrer">
+              <ProjectLink href="/pepsi" target={"_blank"} rel="noreferrer">
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -219,7 +223,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
               </ProjectLink>
 
               <a
-                href="https://github.com/jaeeedev/pot"
+                href="https://github.com/jaeeedev/pepsi-finder"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -96,7 +96,12 @@ function Todo() {
           <Code>submit</Code> 이벤트로 변경해 보는 등 코드를 계속적으로
           고쳐보면서 기초적인 지식들을 얻어갈 수 있었던 프로젝트였습니다.
         </ProjectText>
-        <PrevNext prev={"false"} next={"pot"} pText={"false"} nText={"pot"} />
+        <PrevNext
+          prev={"false"}
+          next={"pepsi"}
+          pText={"false"}
+          nText={"ZERO PEPSI FINDER"}
+        />
       </Container>
     </div>
   );
