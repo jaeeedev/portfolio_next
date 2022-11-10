@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useRef, useEffect } from "react";
 import { MouseEvent } from "react";
 import useObserve from "../utils/useObserve";
 

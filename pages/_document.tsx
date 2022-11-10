@@ -27,12 +27,8 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="ko">
         <Head>
-          <link
-            href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css"
-            rel="stylesheet"
-          />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css"
