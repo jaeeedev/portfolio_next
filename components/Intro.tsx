@@ -85,9 +85,8 @@ const DecoCircle = styled.div`
   left: -220px;
   width: 350px;
   height: 350px;
-  border: 1px double blue;
   border-radius: 50%;
-  background: blue;
+  background-image: linear-gradient(135deg, #5c85fe 0%, #0022ff 100%);
   z-index: -1;
   transition: all 0.5s;
 `;

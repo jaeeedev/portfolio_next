@@ -4,6 +4,7 @@ import { CgNotes } from "react-icons/cg";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import useObserve from "../utils/useObserve";
 
 const ProjectContents = styled.section`
   max-width: 1260px;
@@ -50,7 +51,7 @@ const StyledA = styled.a.attrs({
   position: relative;
   width: 60%;
   min-height: 250px;
-  height: fit-content;
+  /* height: fit-content; */
 
   @media screen and (max-width: 550px) {
     min-height: 0;
@@ -89,6 +90,7 @@ const PjText = styled.p`
 `;
 
 function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
+  const ref = useObserve(boldHandler, 2);
   const projectRef = useRef<null | HTMLDivElement[]>([]);
 
   useEffect(() => {
@@ -98,7 +100,6 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         if (entry.isIntersecting) {
           ent.style.opacity = "1";
           ent.style.transform = "translateY(10px)";
-          boldHandler(2);
         } else {
           ent.style.opacity = "0";
           ent.style.transform = "translateY(0)";
@@ -121,7 +122,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
   return (
     <div>
-      <ProjectContents id="3">
+      <ProjectContents ref={ref} id="3">
         <Title>PROJECT</Title>
         <PjText>✔ 이미지를 클릭하면 해당 프로젝트 페이지로 이동합니다.</PjText>
         <PjText>
@@ -232,6 +233,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
+
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
@@ -281,6 +283,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
+
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
@@ -336,6 +339,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
+
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
@@ -343,7 +347,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="https://portfolio-next-rxye.vercel.app/">
+          <StyledA href="https://www.jaeeedev.com/">
             <ProjectImg
               src="/imgs/intromain.png"
               alt="포폴페이지 썸네일"
@@ -355,8 +359,9 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           <ProjectText>
             <TextTitle mb={"20px"}>포트폴리오 페이지</TextTitle>
             <TextDetail>
-              현재 포트폴리오 페이지입니다. 공부하는 목적으로 Next.js와
-              타입스크립트로 제작되었습니다.
+              현재 포트폴리오 페이지입니다. 기존에 리액트-리액트 라우터로
+              제작했던 페이지에 학습 목적으로 Next.js와 타입스크립트를
+              적용했습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
@@ -364,7 +369,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <ProjectLink href="portfolio" target={"_blank"} rel="noreferrer">
+              <ProjectLink href="portfolio" target="_blank" rel="noreferrer">
                 <a
                   target="_blank"
                   rel="noreferrer"
