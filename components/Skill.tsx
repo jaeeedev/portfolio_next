@@ -35,7 +35,7 @@ const SkillBox = styled.div`
   display: flex;
   gap: 30px;
   flex: 1;
-  transition: all 0.4s;
+  transition: all 0.4s ease;
 
   &:hover {
     transform: translateY(-7px);
