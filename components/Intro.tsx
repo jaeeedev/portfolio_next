@@ -28,10 +28,11 @@ const IntroContents = styled.section`
 const SmallGreet = styled.span`
   display: inline-block;
   margin-bottom: 10px;
-  padding-left: 5px;
   font-size: 17px;
-  color: #0066ff;
-  border-radius: 1rem;
+  border-radius: 2rem;
+  padding: 6px 15px 5px 15px;
+  background: #f1f1ff;
+  color: #4869ff;
 `;
 
 const IntroGreetBox = styled.div`
@@ -112,6 +113,17 @@ const DecoCircle = styled.div`
   transition: all 0.5s;
 `;
 
+const IconWrap = styled.a`
+  .icon {
+    transition: all 0.2s;
+    font-size: 21px;
+    transform: translateY(3px);
+    &:hover {
+      color: #4869ff;
+    }
+  }
+`;
+
 function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
   const ref = useObserve(boldHandler, 0);
 
@@ -154,29 +166,25 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
           <Info>
             <InfoTitle>깃허브</InfoTitle>
             <InfoDetail>
-              <a
+              <IconWrap
                 href="https://github.com/jaeeedev"
                 target="_blank"
                 rel="noreferrer"
               >
-                <BsGithub
-                  style={{ fontSize: "23px", transform: "translateY(5px)" }}
-                />
-              </a>
+                <BsGithub className="icon" />
+              </IconWrap>
             </InfoDetail>
           </Info>
           <Info>
             <InfoTitle>블로그</InfoTitle>
             <InfoDetail>
-              <a
+              <IconWrap
                 href="https://jaypa.tistory.com/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaExternalLinkAlt
-                  style={{ fontSize: "21px", transform: "translateY(3px)" }}
-                />
-              </a>
+                <FaExternalLinkAlt className="icon" />
+              </IconWrap>
             </InfoDetail>
           </Info>
         </InfoBox>

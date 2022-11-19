@@ -12,7 +12,7 @@ const Li = styled.li`
   font-weight: ${({ bold }: { bold: boolean }) => bold && "700"};
   font-size: ${({ bold }) => bold && "17px"};
   margin-left: 20px;
-  padding: 5px 0;
+  padding: 2px 0;
 `;
 
 const ListTitle = styled.h3`
@@ -23,13 +23,12 @@ const ListTitle = styled.h3`
 const ListLink = styled(Link)`
   text-decoration: none;
   padding: 5px 0;
-  display: block;
+  display: inline-block;
 `;
 
 function List() {
   const router = useRouter();
   const param = router.pathname.replace("/", "");
-  const opt = { textDecoration: "none", padding: "5px 0", display: "block" };
 
   return (
     <Container>

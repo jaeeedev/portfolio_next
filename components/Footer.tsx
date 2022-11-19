@@ -16,7 +16,9 @@ const Wrapper = styled.section`
 `;
 
 const Title = styled.h3`
-  font-size: 30px;
+  font-family: "Poppins", Pretendard, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
   margin-bottom: 10px;
 `;
 

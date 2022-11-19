@@ -4,11 +4,8 @@ import { CgNotes } from "react-icons/cg";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-<<<<<<< Updated upstream
-=======
 import useObserve from "../utils/useObserve";
 import { BsCheckCircleFill } from "react-icons/bs";
->>>>>>> Stashed changes
 
 const ProjectContents = styled.section`
   max-width: 1260px;
@@ -18,8 +15,10 @@ const ProjectContents = styled.section`
 `;
 
 const Title = styled.h3`
-  font-size: 35px;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 25px;
+  font-family: "Poppins", Pretendard, sans-serif;
 `;
 
 const ProjectItemBox = styled.div`
@@ -47,6 +46,12 @@ const ProjectImg = styled(Image)`
   background: white;
   object-fit: cover;
   transition: all 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //비율 유지하면서 이미지 줄임
 `;
 
 const StyledA = styled.a.attrs({
@@ -56,14 +61,17 @@ const StyledA = styled.a.attrs({
   display: block;
   position: relative;
   width: 60%;
-  min-height: 250px;
-  height: fit-content;
+  height: 0;
+  padding-bottom: 30%;
+  overflow: hidden;
+  //비율 유지하면서 이미지 줄임
 
   @media screen and (max-width: 550px) {
     min-height: 0;
   }
   @media screen and (max-width: 850px) {
     width: 100%;
+    padding-bottom: 50%;
   }
 `;
 
@@ -99,6 +107,7 @@ const PjText = styled.p`
 `;
 
 function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
+  const ref = useObserve(boldHandler, 2);
   const projectRef = useRef<null | HTMLDivElement[]>([]);
 
   useEffect(() => {
@@ -108,7 +117,6 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         if (entry.isIntersecting) {
           ent.style.opacity = "1";
           ent.style.transform = "translateY(10px)";
-          boldHandler(2);
         } else {
           ent.style.opacity = "0";
           ent.style.transform = "translateY(0)";
@@ -123,13 +131,15 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
     });
 
     projectRef.current?.forEach((project) => {
-      observer.observe(project);
+      if (project) {
+        observer.observe(project);
+      }
     });
   });
 
   return (
     <div>
-      <ProjectContents id="3">
+      <ProjectContents ref={ref} id="3">
         <Title>PROJECT</Title>
         <PjText>
           <BsCheckCircleFill style={{ paddingTop: "3px" }} /> 이미지를 클릭하면
@@ -140,61 +150,10 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           아이콘을 클릭하면 상세 설명 페이지로 이동합니다.
         </PjText>
 
-        {/* <ProjectItemBox
-          ref={(el) => {
-            if (el && projectRef.current) {
-              projectRef.current[0] = el;
-            }
-          }}
-        >
-          <StyledA href="https://jaeeedev.github.io/todo">
-            <ProjectImg
-              src="/imgs/todomain.gif"
-              alt="투두리스트 썸네일"
-              layout="responsive"
-              width={2}
-              height={1}
-            />
-          </StyledA>
-
-          <ProjectText>
-            <TextTitle mb={"20px"}>투두리스트</TextTitle>
-            <TextDetail>
-              가장 기초가 되는 글쓰기, 수정, 삭제 기능 구현을 공부하기 위해
-              제작하였습니다. 배열과 map 메서드를 사용하여 데이터를 저장,
-              출력하고 로컬 스토리지를 사용하여 체크 여부와 텍스트가 저장됩니다.
-            </TextDetail>
-
-            <TextTitle>사용 기술</TextTitle>
-            <TextDetail>HTML, CSS, JS</TextDetail>
-
-            <TextTitle>보러 가기</TextTitle>
-            <TextDetail fz={"23px"}>
-              <ProjectLink href="/todolist" rel="noreferrer">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ marginRight: "10px" }}
-                >
-                  <CgNotes />
-                </a>
-              </ProjectLink>
-
-              <a
-                href="https://github.com/jaeeedev/todo"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BsGithub />
-              </a>
-            </TextDetail>
-          </ProjectText>
-        </ProjectItemBox> */}
-
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
-              projectRef.current[1] = el;
+              projectRef.current[0] = el;
             }
           }}
         >
@@ -202,9 +161,9 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <ProjectImg
               src="/imgs/pepsimain.png"
               alt="펩시파인더 썸네일"
-              layout="responsive"
-              width={2}
-              height={1}
+              fill
+              sizes="(max-width: 850px) 100%,
+              60%"
             />
           </StyledA>
 
@@ -241,7 +200,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
-              projectRef.current[2] = el;
+              projectRef.current[1] = el;
             }
           }}
         >
@@ -249,9 +208,9 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <ProjectImg
               src="/imgs/sbmain.png"
               alt="서울번드 썸네일"
-              layout="responsive"
-              width={2}
-              height={1}
+              fill
+              sizes="(max-width: 850px) 100vw,
+              50vw"
             />
           </StyledA>
           <ProjectText>
@@ -278,7 +237,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
-              projectRef.current[3] = el;
+              projectRef.current[2] = el;
             }
           }}
         >
@@ -286,9 +245,9 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <ProjectImg
               src="/imgs/sbrmain.png"
               alt="서울번드 리액트 썸네일"
-              layout="responsive"
-              width={2}
-              height={1}
+              fill
+              sizes="(max-width: 850px) 100vw,
+              50vw"
             />
           </StyledA>
           <ProjectText>
@@ -322,7 +281,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
-              projectRef.current[4] = el;
+              projectRef.current[3] = el;
             }
           }}
         >
@@ -330,9 +289,9 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <ProjectImg
               src="/imgs/intromain.png"
               alt="포폴페이지 썸네일"
-              layout="responsive"
-              width={2.2}
-              height={1}
+              fill
+              sizes="(max-width: 850px) 100vw,
+              50vw"
             />
           </StyledA>
           <ProjectText>
@@ -347,22 +306,16 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-<<<<<<< Updated upstream
-              <ProjectLink href="portfolio" target={"_blank"} rel="noreferrer">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ marginRight: "10px" }}
-                >
-                  <CgNotes />
-                </a>
-=======
               <ProjectLink href="portfolio" target="_blank" rel="noreferrer">
                 <CgNotes />
->>>>>>> Stashed changes
               </ProjectLink>
-
-              <BsGithub />
+              <a
+                href="https://github.com/jaeeedev/portfolio_next"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsGithub />
+              </a>
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>

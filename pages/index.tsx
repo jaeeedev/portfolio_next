@@ -46,7 +46,6 @@ const Home: NextPage = () => {
       <Header boldIndex={boldIndex} />
       <Intro boldHandler={setBoldIndex} />
       <Skill boldHandler={setBoldIndex} />
-      {/* <Test /> */}
       <Project boldHandler={setBoldIndex} />
       <Footer boldHandler={setBoldIndex} />
     </div>
