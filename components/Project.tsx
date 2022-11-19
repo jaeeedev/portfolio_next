@@ -4,6 +4,11 @@ import { CgNotes } from "react-icons/cg";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+<<<<<<< Updated upstream
+=======
+import useObserve from "../utils/useObserve";
+import { BsCheckCircleFill } from "react-icons/bs";
+>>>>>>> Stashed changes
 
 const ProjectContents = styled.section`
   max-width: 1260px;
@@ -22,9 +27,14 @@ const ProjectItemBox = styled.div`
   gap: 30px;
   margin-bottom: 60px;
   opacity: 1;
-  transition: all 1.1s;
+  transition: all 1s;
+
   @media screen and (max-width: 850px) {
     flex-direction: column;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 `;
 
@@ -37,9 +47,6 @@ const ProjectImg = styled(Image)`
   background: white;
   object-fit: cover;
   transition: all 0.4s;
-
-  @media screen and (max-width: 850px) {
-  }
 `;
 
 const StyledA = styled.a.attrs({
@@ -84,8 +91,11 @@ const TextDetail = styled.p<{ fz?: string }>`
 
 const PjText = styled.p`
   font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 7px;
+
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
 `;
 
 function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
@@ -113,9 +123,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
     });
 
     projectRef.current?.forEach((project) => {
-      if (project) {
-        observer.observe(project);
-      }
+      observer.observe(project);
     });
   });
 
@@ -123,12 +131,16 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
     <div>
       <ProjectContents id="3">
         <Title>PROJECT</Title>
-        <PjText>✔ 이미지를 클릭하면 해당 프로젝트 페이지로 이동합니다.</PjText>
         <PjText>
-          ✔ <CgNotes /> 아이콘을 클릭하면 상세 설명 페이지로 이동합니다.
+          <BsCheckCircleFill style={{ paddingTop: "3px" }} /> 이미지를 클릭하면
+          해당 프로젝트 페이지로 이동합니다.
+        </PjText>
+        <PjText>
+          <BsCheckCircleFill style={{ paddingTop: "3px" }} /> <CgNotes />{" "}
+          아이콘을 클릭하면 상세 설명 페이지로 이동합니다.
         </PjText>
 
-        <ProjectItemBox
+        {/* <ProjectItemBox
           ref={(el) => {
             if (el && projectRef.current) {
               projectRef.current[0] = el;
@@ -177,7 +189,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
               </a>
             </TextDetail>
           </ProjectText>
-        </ProjectItemBox>
+        </ProjectItemBox> */}
 
         <ProjectItemBox
           ref={(el) => {
@@ -213,22 +225,16 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <ProjectLink href="/pepsi" target={"_blank"} rel="noreferrer">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ marginRight: "10px" }}
-                >
-                  <CgNotes />
-                </a>
+                <CgNotes />
               </ProjectLink>
 
-              <a
+              <ProjectLink
                 href="https://github.com/jaeeedev/pepsi-finder"
-                target="_blank"
+                target={"_blank"}
                 rel="noreferrer"
               >
                 <BsGithub />
-              </a>
+              </ProjectLink>
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
@@ -262,22 +268,10 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <ProjectLink href="/seoulbund" target={"_blank"} rel="noreferrer">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ marginRight: "10px" }}
-                >
-                  <CgNotes />
-                </a>
+                <CgNotes />
               </ProjectLink>
 
-              <a
-                href="https://github.com/jaeeedev/work"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BsGithub />
-              </a>
+              <BsGithub />
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
@@ -318,21 +312,10 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ marginRight: "10px" }}
-                >
-                  <CgNotes />
-                </a>
+                <CgNotes />
               </ProjectLink>
-              <a
-                href="https://github.com/jaeeedev/seoulbund"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BsGithub />
-              </a>
+
+              <BsGithub />
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
@@ -364,6 +347,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
+<<<<<<< Updated upstream
               <ProjectLink href="portfolio" target={"_blank"} rel="noreferrer">
                 <a
                   target="_blank"
@@ -372,14 +356,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
                 >
                   <CgNotes />
                 </a>
+=======
+              <ProjectLink href="portfolio" target="_blank" rel="noreferrer">
+                <CgNotes />
+>>>>>>> Stashed changes
               </ProjectLink>
-              <a
-                href="https://github.com/jaeeedev/portfolio_next"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BsGithub />
-              </a>
+
+              <BsGithub />
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>

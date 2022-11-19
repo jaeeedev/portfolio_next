@@ -28,7 +28,7 @@ const GoToMain = styled.span`
 function PageHeader() {
   return (
     <header>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <Inner>
           <GoToMain>GO TO MAIN</GoToMain>
         </Inner>

@@ -140,23 +140,7 @@ function SeoulBund() {
           대해서도 공부하게 되었습니다. 헤더나 사이드바같이 공통적으로 사용되는
           코드들은 common.js나 common.css 파일로 분리했습니다.
         </ProjectText>
-        <br />
-        <ProjectImg
-          src="/imgs/sbplan.png"
-          layout="responsive"
-          width={13}
-          height={5}
-          alt="일정 관리"
-        />
-        <br />
         <ProjectText>
-          개인적인 내용은 지웠습니다. <br />
-          기한이 정해진 프로젝트다 보니 매일 매일 만들어야 하는 부분들과
-          해결해야 하는 부분을 기록해가며 제작했습니다. 리뷰에 여러 사진을
-          첨부할 수 있게 할것인지는 기한을 보고 결정하자고 고민했지만 다행히도
-          구현할 수 있었습니다.
-          <br />
-          <br />
           돔을 선택할 때는 무조건적으로 <Code>document.queryselector</Code>를
           사용하지 않고 <Code>element.queryselector</Code>도 사용해 보았습니다.
           아무 생각없이 관성적으로 document를 잡아서 써 왔기 때문에 이런 선택

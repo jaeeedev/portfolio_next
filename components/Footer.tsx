@@ -4,7 +4,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import useObserve from "../utils/useObserve";
 
 const Wrapper = styled.section`
-  background: #f3f3f3;
+  background: #f9f9fb;
   padding: 30px;
   padding-top: 50px;
   margin-top: 150px;

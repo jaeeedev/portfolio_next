@@ -3,14 +3,14 @@ import { MouseEvent } from "react";
 import useObserve from "../utils/useObserve";
 
 const Wrapper = styled.section`
-  background: #f3f3f3;
+  background: #f9f9fb;
   padding-top: 5px;
   margin-top: 50px;
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 700px) {
     background: transparent;
   }
   @media screen and (min-width: 1500px) {
-    margin-top: 280px;
+    margin-top: 190px;
   }
 `;
 
@@ -52,7 +52,6 @@ const SkillText = styled.p`
   line-height: 1.6;
   font-size: 16px;
   word-break: keep-all;
-
   @media screen and (max-width: 500px) {
     font-size: 15px;
   }
@@ -133,8 +132,8 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
                   onMouseLeave={down}
                 />
                 <SkillText>
-                  포트폴리오 페이지, 프로젝트(ZERO PEPSI FINDER)에 적용되어
-                  있으며 현재 공부중입니다.
+                  포트폴리오 페이지, 프로젝트(ZERO PEPSI FINDER)에 <br />
+                  적용되어 있으며 현재 공부중입니다.
                 </SkillText>
               </SkillItem>
               <SkillItem>
@@ -144,8 +143,8 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
                   onMouseLeave={down}
                 />
                 <SkillText>
-                  프로젝트(서울번드 리액트, ZERO PEPSI FINDER)에 적용되어 있으며
-                  현재 공부중입니다.
+                  프로젝트(서울번드 리액트, ZERO PEPSI FINDER)에 <br />
+                  적용되어 있으며 현재 공부중입니다.
                 </SkillText>
               </SkillItem>
             </SkillBox>

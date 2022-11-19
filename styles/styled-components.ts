@@ -42,7 +42,7 @@ export const ProjectTitle = styled.h1`
 
 export const ProjectText = styled.p`
   line-height: 1.6;
-  margin: 15px 0;
+  margin: 25px 0;
 `;
 
 export const ProjectImg = styled(Image)`

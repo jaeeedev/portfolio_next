@@ -35,9 +35,6 @@ function List() {
     <Container>
       <ListTitle>프로젝트 목록</ListTitle>
       <ol>
-        <Li bold={param === "todolist"}>
-          <ListLink href="/todolist">투두리스트</ListLink>
-        </Li>
         <Li bold={param === "pepsi"}>
           <ListLink href="/pepsi">ZERO PEPSI FINDER</ListLink>
         </Li>

@@ -6,6 +6,7 @@ import Skill from "../components/Skill";
 import Footer from "../components/Footer";
 import Project from "../components/Project";
 import { NextSeo } from "next-seo";
+import Test from "../components/Test";
 
 const Home: NextPage = () => {
   const [boldIndex, setBoldIndex] = useState(0);
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
       <Header boldIndex={boldIndex} />
       <Intro boldHandler={setBoldIndex} />
       <Skill boldHandler={setBoldIndex} />
+      {/* <Test /> */}
       <Project boldHandler={setBoldIndex} />
       <Footer boldHandler={setBoldIndex} />
     </div>
