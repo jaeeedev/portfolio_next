@@ -27,16 +27,14 @@ function Portfolio() {
       />
 
       <Container>
-        <Link href="/">
-          <a>
-            <MainImgBox
-              layout="responsive"
-              width={1371}
-              height={599}
-              src="/imgs/intromain.png"
-              alt="포폴 썸네일"
-            />
-          </a>
+        <Link href="/" legacyBehavior>
+          <MainImgBox
+            layout="responsive"
+            width={1371}
+            height={599}
+            src="/imgs/intromain.png"
+            alt="포폴 썸네일"
+          />
         </Link>
 
         <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>

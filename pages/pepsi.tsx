@@ -49,19 +49,14 @@ function Pepsi() {
 
         <ProjectText>
           편의점의 제로 펩시 행사 정보를 알려주는 웹페이지를 제작했습니다.
-        </ProjectText>
-
-        <TextTitle>제작 의도</TextTitle>
-        <ProjectText>
+          <br />
+          <br />
           개인적으로 제로 펩시를 정말 좋아하고 자주 사먹는데, 매달 1+1 행사를
           하는 편의점을 찾기 위해 일일이 검색하는 과정이 귀찮다고 생각했습니다.
           그래서 제로 펩시에 관한 정보만 제공하는 페이지를 만들자! 하고 바로
           실행에 옮기게 되었습니다.
-        </ProjectText>
-
-        <br />
-
-        <ProjectText>
+          <br />
+          <br />
           편의점들은 오픈api를 따로 제공하고 있지 않기 때문에 크롤링을 해야
           했습니다.{" "}
           <a
@@ -102,14 +97,23 @@ function Pepsi() {
         <TextTitle>회고</TextTitle>
         <ProjectText>
           따로 페이지 라우팅이나 복잡한 로직이 없는 단일 페이지기 때문에 리액트
-          코드는 학습 목적을 겸해 타입스크립트로 작성했습니다. 저는 평소에
-          배웠으면 써먹어야 한다는 신조를 가지고 있는데, 이번에는 정말 관심있고
-          저에게 필요했던 페이지를 제작했기 때문에 재미있었던 프로젝트였습니다.
+          코드는 학습 목적을 겸해 타입스크립트로 작성했습니다. 편의점 브랜드마다
+          그에 맞는 색상을 정해주어야 했는데, 스타일드 컴포넌트 내 과도한 if문을
+          줄이고 타입스크립트 오류를 해결하는 과정을{" "}
+          <a
+            href="https://jaypa.tistory.com/23"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#7c1e52" }}
+          >
+            블로그
+          </a>{" "}
+          에 기록했습니다.
         </ProjectText>
         <PrevNext
-          prev={"todolist"}
+          prev={"false"}
           next={"seoulbund"}
-          pText={"투두리스트"}
+          pText={"false"}
           nText={"서울번드"}
         />
       </Container>

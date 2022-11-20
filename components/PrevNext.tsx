@@ -48,17 +48,13 @@ function PrevNext({ prev, next, pText, nText }: PrevNextProps) {
       {prev !== "false" && (
         <Left>
           <StyledLink href={`/${prev}`}>
-            <a>
-              <BsArrowLeft style={{ fontSize: "22px" }} />
-            </a>
+            <BsArrowLeft style={{ fontSize: "22px" }} />
           </StyledLink>
           <StyledLink href={`/${prev}`}>
-            <a>
-              <div>
-                <PrevNextSpan>prev</PrevNextSpan>
-                <h3>{pText}</h3>
-              </div>
-            </a>
+            <div>
+              <PrevNextSpan>prev</PrevNextSpan>
+              <h3>{pText}</h3>
+            </div>
           </StyledLink>
         </Left>
       )}
@@ -66,17 +62,13 @@ function PrevNext({ prev, next, pText, nText }: PrevNextProps) {
       {next !== "false" && (
         <Right>
           <StyledLink href={`/${next}`}>
-            <a>
-              <div>
-                <PrevNextSpan>next</PrevNextSpan>
-                <h3>{nText}</h3>
-              </div>
-            </a>
+            <div>
+              <PrevNextSpan>next</PrevNextSpan>
+              <h3>{nText}</h3>
+            </div>
           </StyledLink>
           <StyledLink href={`/${next}`}>
-            <a>
-              <BsArrowRight style={{ fontSize: "22px" }} />
-            </a>
+            <BsArrowRight style={{ fontSize: "22px" }} />
           </StyledLink>
         </Right>
       )}

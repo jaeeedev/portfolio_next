@@ -4,7 +4,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import useObserve from "../utils/useObserve";
 
 const Wrapper = styled.section`
-  background: #f3f3f3;
+  background: #f9f9fb;
   padding: 30px;
   padding-top: 50px;
   margin-top: 100px;
@@ -16,7 +16,9 @@ const Wrapper = styled.section`
 `;
 
 const Title = styled.h3`
-  font-size: 30px;
+  font-family: "Poppins", Pretendard, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
   margin-bottom: 10px;
 `;
 

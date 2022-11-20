@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import useObserve from "../utils/useObserve";
 
 const Wrapper = styled.div`
   background: #f9f9fb;
@@ -11,10 +10,6 @@ const Contents = styled.section`
   margin: 30px auto;
   padding: 20px;
   padding-top: 80px;
-
-  @media screen and (max-width: 700px) {
-    margin-top: 0;
-  }
 `;
 
 const OneLine = styled.div`
@@ -35,7 +30,7 @@ const SkillBox = styled.div`
   display: flex;
   gap: 30px;
   flex: 1;
-  transition: all 0.4s ease;
+  transition: all 0.4s;
 
   &:hover {
     transform: translateY(-7px);
@@ -53,14 +48,9 @@ const ImgBox = styled.div`
   height: 100px;
   position: relative;
 `;
-const Img = styled(Image).attrs({
-  width: 100,
-  height: 100,
-})``;
+const Img = styled(Image)``;
 
-const SkillDesc = styled.div`
-  word-break: keep-all;
-`;
+const SkillDesc = styled.div``;
 
 const SkillImgBox = styled.div`
   display: flex;
@@ -68,9 +58,9 @@ const SkillImgBox = styled.div`
 `;
 
 const SkillList = styled.li`
+  /* list-style-position: inside; */
   list-style: none;
   line-height: 1.5;
-  margin-bottom: 3px;
 `;
 
 const Status = styled.span<{ st?: boolean }>`
@@ -86,23 +76,17 @@ const Status = styled.span<{ st?: boolean }>`
 `;
 
 const SkillTitle = styled.h3`
-  font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
-  font-weight: 600;
 `;
 
 const MainTitle = styled.h2`
-  font-family: "Poppins", Pretendard, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.4rem;
   margin-bottom: 30px;
 `;
 
-function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
-  const ref = useObserve(boldHandler, 1);
-
+function Test() {
   return (
-    <Wrapper id="2" ref={ref}>
+    <Wrapper>
       <Contents>
         <MainTitle>SKILL</MainTitle>
 
@@ -110,7 +94,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
           <SkillBox>
             <SkillImgBox>
               <ImgBox>
-                <Img alt="html 로고" src="/imgs/html.png" />
+                <Img alt="html 로고" src="/imgs/html.png" fill />
               </ImgBox>
             </SkillImgBox>
             <SkillDesc>
@@ -126,7 +110,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
           <SkillBox>
             <SkillImgBox>
               <ImgBox>
-                <Img alt="css 로고" src="/imgs/css.png" />
+                <Img alt="css 로고" src="/imgs/css.png" fill />
               </ImgBox>
             </SkillImgBox>
             <SkillDesc>
@@ -145,7 +129,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
           <SkillBox>
             <SkillImgBox>
               <ImgBox>
-                <Img alt="자바스크립트 로고" src="/imgs/js.png" />
+                <Img alt="자바스크립트 로고" src="/imgs/js.png" fill />
               </ImgBox>
             </SkillImgBox>
             <SkillDesc>
@@ -163,12 +147,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
           <SkillBox>
             <SkillImgBox>
               <ImgBox>
-                <Img
-                  alt="리액트 로고"
-                  src="/imgs/logo512.png"
-                  width={100}
-                  height={100}
-                />
+                <Img alt="리액트 로고" src="/imgs/logo512.png" fill />
               </ImgBox>
             </SkillImgBox>
             <SkillDesc>
@@ -189,7 +168,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
           <SkillBox>
             <SkillImgBox>
               <ImgBox>
-                <Img alt="타입스크립트 로고" src="/imgs/ts.png" />
+                <Img alt="타입스크립트 로고" src="/imgs/ts.png" fill />
               </ImgBox>
             </SkillImgBox>
             <SkillDesc>
@@ -207,7 +186,7 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
           <SkillBox>
             <SkillImgBox>
               <ImgBox>
-                <Img alt="노드js 로고" src="/imgs/nodejs.png" />
+                <Img alt="노드js 로고" src="/imgs/nodejs.png" fill />
               </ImgBox>
             </SkillImgBox>
             <SkillDesc>
@@ -225,4 +204,4 @@ function Skill({ boldHandler }: { boldHandler: (value: number) => void }) {
   );
 }
 
-export default Skill;
+export default Test;
