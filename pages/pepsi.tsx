@@ -10,6 +10,7 @@ import {
   Code,
 } from "../styles/styled-components";
 import CommonDocu from "../components/CommonDocu";
+import styled from "styled-components";
 
 function Pepsi() {
   useEffect(() => {
@@ -94,6 +95,19 @@ function Pepsi() {
           좋았습니다.
         </ProjectText>
 
+        <MainImgBox
+          src="/imgs/skeleton.gif"
+          alt="로딩 스켈레톤 ui"
+          layout="responsive"
+          width={4}
+          height={3}
+        />
+
+        <ProjectText>
+          로딩 화면입니다. 데이터를 가져오는 중이라는 것을 시각적으로 알려주기
+          위해 스켈레톤 UI를 적용했습니다.
+        </ProjectText>
+
         <TextTitle>회고</TextTitle>
         <ProjectText>
           따로 페이지 라우팅이나 복잡한 로직이 없는 단일 페이지기 때문에 리액트
@@ -110,6 +124,7 @@ function Pepsi() {
           </a>{" "}
           에 기록했습니다.
         </ProjectText>
+
         <PrevNext
           prev={"false"}
           next={"seoulbund"}
