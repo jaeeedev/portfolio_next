@@ -10,7 +10,25 @@ import {
   Code,
 } from "../styles/styled-components";
 import CommonDocu from "../components/CommonDocu";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const CodeBox = styled.div<{ status?: string }>`
+  margin: 1rem;
+  padding: 1rem;
+  background: #f3f3f3;
+  border-radius: 10px;
+
+  ${({ status }) =>
+    status === "before"
+      ? css`
+          background: #fff5f5;
+          border: 1px solid #ffc9c9;
+        `
+      : css`
+          background: #e6fcf5;
+          border: 1px solid #96f2d7;
+        `}
+`;
 
 function Pepsi() {
   useEffect(() => {
@@ -89,10 +107,6 @@ function Pepsi() {
           <Code>Styled-components</Code> 의 <Code>ThemeProvider</Code> 기능을
           사용하여 텍스트 색상, 배경 색상, 박스 색상 등을 darkTheme, lightTheme
           두가지 객체에 담아두고 현재 선택된 모드에 맞게 적용되도록 했습니다.
-          스타일드 컴포넌트는 여러 번 사용해본 라이브러리지만 ThemeProvider
-          기능은 처음 사용해 보았습니다. <Code>Context API</Code> 를 기반으로
-          하는 기능이라 모든 컴포넌트에서 쉽게 테마 속성들을 끌어다 쓸 수 있어
-          좋았습니다.
         </ProjectText>
 
         <MainImgBox
@@ -110,19 +124,17 @@ function Pepsi() {
 
         <TextTitle>회고</TextTitle>
         <ProjectText>
-          따로 페이지 라우팅이나 복잡한 로직이 없는 단일 페이지기 때문에 리액트
-          코드는 학습 목적을 겸해 타입스크립트로 작성했습니다. 편의점 브랜드마다
-          그에 맞는 색상을 정해주어야 했는데, 스타일드 컴포넌트 내 과도한 if문을
-          줄이고 타입스크립트 오류를 해결하는 과정을{" "}
-          <a
-            href="https://jaypa.tistory.com/23"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "#7c1e52" }}
-          >
-            블로그
-          </a>{" "}
-          에 기록했습니다.
+          따로 페이지 라우팅이나 복잡한 로직이 없는 단일 페이지기 때문에
+          프론트엔드 코드는 학습 목적을 겸해 타입스크립트로 작성했습니다. 편의점
+          브랜드마다 그에 맞는 색상을 정해주어야 했는데, 스타일드 컴포넌트 내
+          if문이 과도해지는 문제가 있었습니다. if문으로 일일이 리턴값을
+          지정해주었던 코드에서 객체의 키값에 맞게 색상이 지정되는 방식으로
+          코드를 변경하여 기존에 6줄이었던 코드를 한줄로 줄일 수 있었습니다.{" "}
+          <br />
+          스타일드 컴포넌트는 여러 번 사용해본 라이브러리지만 ThemeProvider
+          기능은 처음 사용해 보았습니다. <Code>Context API</Code> 를 기반으로
+          하는 기능이라 모든 컴포넌트에서 쉽게 테마 속성들을 끌어다 쓸 수 있어
+          좋았습니다.
         </ProjectText>
 
         <PrevNext
