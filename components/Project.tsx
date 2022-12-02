@@ -54,7 +54,7 @@ const ProjectImg = styled(Image)`
   //비율 유지하면서 이미지 줄임
 `;
 
-const StyledA = styled.a.attrs({
+const StyledA = styled(Link).attrs({
   target: "_blank",
   rel: "noreferrer",
 })`
@@ -157,7 +157,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="https://pepsi-finder.herokuapp.com/">
+          <StyledA href="/pepsi">
             <ProjectImg
               src="/imgs/pepsimain.png"
               alt="펩시파인더 썸네일"
@@ -172,8 +172,6 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextDetail>
               제로 펩시의 편의점별 할인 정보(1+1, 2+1)를 알려주는 페이지입니다.
               다크모드와 라이트모드를 지원합니다.
-              <br />
-              (헤로쿠 배포로 인해 초기 접속 시 딜레이가 있을 수 있습니다.)
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
@@ -183,17 +181,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <ProjectLink href="/pepsi" target={"_blank"} rel="noreferrer">
-                <CgNotes />
-              </ProjectLink>
-
-              <ProjectLink
+              <a
                 href="https://github.com/jaeeedev/pepsi-finder"
                 target={"_blank"}
                 rel="noreferrer"
               >
                 <BsGithub />
-              </ProjectLink>
+              </a>
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
@@ -205,7 +199,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="https://jaeeedev.github.io/work">
+          <StyledA href="/seoulbund ">
             <ProjectImg
               src="/imgs/sbmain.png"
               alt="서울번드 썸네일"
@@ -227,11 +221,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <ProjectLink href="/seoulbund" target={"_blank"} rel="noreferrer">
-                <CgNotes />
-              </ProjectLink>
-
-              <BsGithub />
+              <a
+                href="https://github.com/jaeeedev/work"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsGithub />
+              </a>
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
@@ -243,7 +239,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="https://reactsbr.herokuapp.com/">
+          <StyledA href="/seoulbundreact">
             <ProjectImg
               src="/imgs/sbrmain.png"
               alt="서울번드 리액트 썸네일"
@@ -256,8 +252,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle mb={"20px"}>서울번드 리액트</TextTitle>
             <TextDetail>
               기존 자바스크립트 프로젝트를 조금 변경하여 리액트로 제작했습니다.
-              로그인, 장바구니, 서치 기능 등을 구현했습니다. (헤로쿠 배포로 인해
-              초기 접속 시 딜레이가 있을 수 있습니다.)
+              로그인, 장바구니, 서치 기능 등을 구현했습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
@@ -268,15 +263,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <ProjectLink
-                href="seoulbundreact"
+              <a
+                href="https://github.com/jaeeedev/seoulbund"
                 target="_blank"
                 rel="noreferrer"
               >
-                <CgNotes />
-              </ProjectLink>
-
-              <BsGithub />
+                <BsGithub />
+              </a>
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
@@ -288,7 +281,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="https://www.jaeeedev.com/">
+          <StyledA href="/portfolio">
             <ProjectImg
               src="/imgs/intromain.png"
               alt="포폴페이지 썸네일"
@@ -310,9 +303,6 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <ProjectLink href="portfolio" target="_blank" rel="noreferrer">
-                <CgNotes />
-              </ProjectLink>
               <a
                 href="https://github.com/jaeeedev/portfolio_next"
                 target="_blank"

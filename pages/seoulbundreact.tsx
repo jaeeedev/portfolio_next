@@ -30,25 +30,24 @@ function SbReact() {
       />
 
       <Container>
-        <a
+        {/* <a
           href="https://reactsbr.herokuapp.com/"
           target={"_blank"}
           rel="noreferrer"
           style={{ marginRight: "10px" }}
-        >
-          <MainImgBox
-            src="/imgs/sbrmenu.gif"
-            alt="서울번드리액트 메뉴"
-            layout="responsive"
-            width={1423}
-            height={952}
-          />
-        </a>
+        > */}
+        <MainImgBox
+          src="/imgs/sbrmenu.gif"
+          alt="서울번드리액트 메뉴"
+          layout="responsive"
+          width={1423}
+          height={952}
+        />
+        {/* </a> */}
 
-        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
+        {/* <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc> */}
 
         <ProjectText>
-          (헤로쿠 배포로 인해 초기 접속 시 딜레이가 있을 수 있습니다.)
           <br /> 기존의 자바스크립트 프로젝트를 간소화하여 리액트로
           제작했습니다. <br />
           카테고리에 들어가면 제품들이 있습니다. 상단의 소분류 버튼들을 클릭하면

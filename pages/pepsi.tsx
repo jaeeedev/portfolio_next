@@ -49,7 +49,7 @@ function Pepsi() {
       />
 
       <Container>
-        <a
+        {/* <a
           href="https://pepsi-finder.herokuapp.com/"
           target={"_blank"}
           rel="noreferrer"
@@ -62,10 +62,17 @@ function Pepsi() {
             width={3}
             height={2}
           />
-        </a>
+        </a> */}
 
-        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
+        {/* <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc> */}
 
+        <MainImgBox
+          src="/imgs/skeleton.gif"
+          alt="로딩 스켈레톤 ui"
+          layout="responsive"
+          width={4}
+          height={3}
+        />
         <ProjectText>
           편의점의 제로 펩시 행사 정보를 알려주는 웹페이지를 제작했습니다.
           <br />
@@ -107,19 +114,8 @@ function Pepsi() {
           <Code>Styled-components</Code> 의 <Code>ThemeProvider</Code> 기능을
           사용하여 텍스트 색상, 배경 색상, 박스 색상 등을 darkTheme, lightTheme
           두가지 객체에 담아두고 현재 선택된 모드에 맞게 적용되도록 했습니다.
-        </ProjectText>
-
-        <MainImgBox
-          src="/imgs/skeleton.gif"
-          alt="로딩 스켈레톤 ui"
-          layout="responsive"
-          width={4}
-          height={3}
-        />
-
-        <ProjectText>
-          로딩 화면입니다. 데이터를 가져오는 중이라는 것을 시각적으로 알려주기
-          위해 스켈레톤 UI를 적용했습니다.
+          또한 데이터를 가져오고 있다는 것을 시각적으로 알려주기 위해 로딩
+          상태일때 스켈레톤 UI를 보여주도록 했습니다.
         </ProjectText>
 
         <TextTitle>회고</TextTitle>
@@ -128,9 +124,9 @@ function Pepsi() {
           프론트엔드 코드는 학습 목적을 겸해 타입스크립트로 작성했습니다. 편의점
           브랜드마다 그에 맞는 색상을 정해주어야 했는데, 스타일드 컴포넌트 내
           if문이 과도해지는 문제가 있었습니다. if문으로 일일이 리턴값을
-          지정해주었던 코드에서 객체의 키값에 맞게 색상이 지정되는 방식으로
-          코드를 변경하여 기존에 6줄이었던 코드를 한줄로 줄일 수 있었습니다.{" "}
-          <br />
+          지정해주었던 코드에서 객체의 키값(들어오는 편의점 브랜드 데이터)에
+          맞게 색상이 지정되는 방식으로 코드를 변경하여 불필요하게 반복되는
+          코드를 간단하게 줄일 수 있었습니다. <br />
           스타일드 컴포넌트는 여러 번 사용해본 라이브러리지만 ThemeProvider
           기능은 처음 사용해 보았습니다. <Code>Context API</Code> 를 기반으로
           하는 기능이라 모든 컴포넌트에서 쉽게 테마 속성들을 끌어다 쓸 수 있어
