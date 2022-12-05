@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { BsGithub } from "react-icons/bs";
-import { CgNotes } from "react-icons/cg";
+import { BsGithub, BsGlobe2 } from "react-icons/bs";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useObserve from "../utils/useObserve";
-import { BsCheckCircleFill } from "react-icons/bs";
 
 const ProjectContents = styled.section`
   max-width: 1260px;
@@ -95,6 +93,10 @@ const TextDetail = styled.p<{ fz?: string }>`
   font-size: ${(props) => props.fz || "15px"};
   margin-bottom: 10px;
   word-break: keep-all;
+
+  a {
+    margin-right: 10px;
+  }
 `;
 
 const PjText = styled.p`
@@ -141,14 +143,6 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
     <div>
       <ProjectContents ref={ref} id="3">
         <Title>PROJECT</Title>
-        <PjText>
-          <BsCheckCircleFill style={{ paddingTop: "3px" }} /> 이미지를 클릭하면
-          해당 프로젝트 페이지로 이동합니다.
-        </PjText>
-        <PjText>
-          <BsCheckCircleFill style={{ paddingTop: "3px" }} /> <CgNotes />{" "}
-          아이콘을 클릭하면 상세 설명 페이지로 이동합니다.
-        </PjText>
 
         <ProjectItemBox
           ref={(el) => {
@@ -157,32 +151,29 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="/pepsi">
+          <StyledA href="/pot">
             <ProjectImg
               src="/imgs/pepsimain.png"
-              alt="펩시파인더 썸네일"
+              alt="pot 썸네일"
               fill
               sizes="(max-width: 850px) 100%,
-              60%"
+            60%"
             />
           </StyledA>
 
           <ProjectText>
-            <TextTitle mb={"20px"}>ZERO PEPSI FINDER</TextTitle>
+            <TextTitle mb={"20px"}>Pot</TextTitle>
             <TextDetail>
-              제로 펩시의 편의점별 할인 정보(1+1, 2+1)를 알려주는 페이지입니다.
-              다크모드와 라이트모드를 지원합니다.
+              가상의 웹페이지를 퍼블리싱했습니다. 반응형으로 제작되었습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
-            <TextDetail>
-              React, TypeScript, Styled-components, JavaScript, Node.js
-            </TextDetail>
+            <TextDetail>HTML, CSS, JavaScript, JQuery</TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <a
-                href="https://github.com/jaeeedev/pepsi-finder"
+                href="https://github.com/jaeeedev/pot"
                 target={"_blank"}
                 rel="noreferrer"
               >
@@ -199,31 +190,33 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             }
           }}
         >
-          <StyledA href="/seoulbund ">
+          <StyledA href="/pepsi">
             <ProjectImg
-              src="/imgs/sbmain.png"
-              alt="서울번드 썸네일"
+              src="/imgs/pepsimain.png"
+              alt="펩시파인더 썸네일"
               fill
-              sizes="(max-width: 850px) 100vw,
-              50vw"
+              sizes="(max-width: 850px) 100%,
+              60%"
             />
           </StyledA>
+
           <ProjectText>
-            <TextTitle mb={"20px"}>서울번드</TextTitle>
+            <TextTitle mb={"20px"}>ZERO PEPSI FINDER</TextTitle>
             <TextDetail>
-              쇼핑몰 제작 프로젝트입니다. 반응형으로 제작되었습니다. 메인, 제품
-              상세, 장바구니 페이지를 제작하였습니다. 리뷰 작성과 장바구니
-              기능을 구현했습니다.
+              현재 제로 펩시의 편의점별 할인 정보(1+1, 2+1)를 알려주는
+              페이지입니다. 다크모드와 라이트모드를 지원합니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
-            <TextDetail>HTML, CSS, JS</TextDetail>
+            <TextDetail>
+              React, TypeScript, Styled-components, JavaScript, Node.js, Express
+            </TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <a
-                href="https://github.com/jaeeedev/work"
-                target="_blank"
+                href="https://github.com/jaeeedev/pepsi-finder"
+                target={"_blank"}
                 rel="noreferrer"
               >
                 <BsGithub />
@@ -252,13 +245,12 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             <TextTitle mb={"20px"}>서울번드 리액트</TextTitle>
             <TextDetail>
               기존 자바스크립트 프로젝트를 조금 변경하여 리액트로 제작했습니다.
-              로그인, 장바구니, 서치 기능 등을 구현했습니다.
+              로그인, 장바구니 기능 등이 구현되어 있습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
             <TextDetail>
-              React, React-router, Redux-toolkit, Styled-components, Express,
-              MongoDB
+              React, React-router, Redux-toolkit, Styled-components, Firebase
             </TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
@@ -269,6 +261,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
                 rel="noreferrer"
               >
                 <BsGithub />
+              </a>
+              <a
+                href="https://dapper-pudding-d0dfcf.netlify.app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsGlobe2 />
               </a>
             </TextDetail>
           </ProjectText>

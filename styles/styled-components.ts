@@ -96,3 +96,20 @@ export const LinksContainer = styled.div`
   gap: 15px;
   margin-bottom: 20px;
 `;
+export const ImgContainer = styled.div`
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+`;
+
+export const Img = styled(Image)`
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  position: relative !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+`;

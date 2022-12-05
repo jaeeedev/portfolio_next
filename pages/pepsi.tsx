@@ -6,7 +6,6 @@ import {
   ProjectImg,
   TextTitle,
   MainImgBox,
-  MainLinkDesc,
   Code,
 } from "../styles/styled-components";
 import CommonDocu from "../components/CommonDocu";
@@ -45,27 +44,11 @@ function Pepsi() {
           "Styled-components",
           "JavaScript",
           "Node.js",
+          "Express",
         ]}
       />
 
       <Container>
-        {/* <a
-          href="https://pepsi-finder.herokuapp.com/"
-          target={"_blank"}
-          rel="noreferrer"
-          style={{ marginRight: "10px" }}
-        >
-          <MainImgBox
-            src="/imgs/pepsimain.png"
-            alt="펩시파인더 화면"
-            layout="responsive"
-            width={3}
-            height={2}
-          />
-        </a> */}
-
-        {/* <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc> */}
-
         <MainImgBox
           src="/imgs/skeleton.gif"
           alt="로딩 스켈레톤 ui"
@@ -95,9 +78,9 @@ function Pepsi() {
           </a>
           라는 편의점 정보를 모아놓은 페이지에서 제로 펩시에 관련한 정보들만
           가져왔습니다. <Code>cheerio</Code> 라이브러리를 사용하여 필요한 돔
-          노드들만 추출하여 배열로 담고 화면에 리스트 형태로 나타내주었습니다.
-          그리고 1+1 행사를 하는 편의점들이 가장 먼저 보일 수 있도록 데이터
-          배열을 sort 했습니다.
+          노드들만 추출하여 배열로 담은 후 해당 라우트로 요청이 들어오면 배열을
+          반환하도록 했습니다. 그리고 1+1 행사를 하는 편의점들이 가장 먼저 보일
+          수 있도록 데이터 배열을 sort 했습니다.
         </ProjectText>
 
         <ProjectImg
@@ -126,7 +109,7 @@ function Pepsi() {
           if문이 과도해지는 문제가 있었습니다. if문으로 일일이 리턴값을
           지정해주었던 코드에서 객체의 키값(들어오는 편의점 브랜드 데이터)에
           맞게 색상이 지정되는 방식으로 코드를 변경하여 불필요하게 반복되는
-          코드를 간단하게 줄일 수 있었습니다. <br />
+          코드를 짧게 줄일 수 있었습니다. <br />
           스타일드 컴포넌트는 여러 번 사용해본 라이브러리지만 ThemeProvider
           기능은 처음 사용해 보았습니다. <Code>Context API</Code> 를 기반으로
           하는 기능이라 모든 컴포넌트에서 쉽게 테마 속성들을 끌어다 쓸 수 있어
@@ -134,10 +117,10 @@ function Pepsi() {
         </ProjectText>
 
         <PrevNext
-          prev={"false"}
-          next={"seoulbund"}
-          pText={"false"}
-          nText={"서울번드"}
+          prev={"pot"}
+          next={"seoulbundreact"}
+          pText={"Pot"}
+          nText={"서울번드 리액트"}
         />
       </Container>
     </div>

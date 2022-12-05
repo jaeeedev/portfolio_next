@@ -34,11 +34,11 @@ function List() {
     <Container>
       <ListTitle>프로젝트 목록</ListTitle>
       <ol>
+        <Li bold={param === "pot"}>
+          <ListLink href="/pot">Pot</ListLink>
+        </Li>
         <Li bold={param === "pepsi"}>
           <ListLink href="/pepsi">ZERO PEPSI FINDER</ListLink>
-        </Li>
-        <Li bold={param === "seoulbund"}>
-          <ListLink href="/seoulbund">서울번드</ListLink>
         </Li>
         <Li bold={param === "seoulbundreact"}>
           <ListLink href="/seoulbundreact">서울번드 리액트</ListLink>
