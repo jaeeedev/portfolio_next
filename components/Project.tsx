@@ -153,7 +153,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
         >
           <StyledA href="/pot">
             <ProjectImg
-              src="/imgs/pepsimain.png"
+              src="/imgs/pot_main.png"
               alt="pot 썸네일"
               fill
               sizes="(max-width: 850px) 100%,
