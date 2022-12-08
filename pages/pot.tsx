@@ -75,9 +75,9 @@ function Pot() {
 
         <PrevNext
           prev={"false"}
-          next={"seoulbund"}
+          next={"pepsi"}
           pText={"false"}
-          nText={"서울번드"}
+          nText={"ZERO PEPSI FINDER"}
         />
       </Container>
     </div>
