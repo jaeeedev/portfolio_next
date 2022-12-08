@@ -179,6 +179,13 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
               >
                 <BsGithub />
               </a>
+              <a
+                href="https://jaeeedev.github.io/pot/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsGlobe2 />
+              </a>
             </TextDetail>
           </ProjectText>
         </ProjectItemBox>
