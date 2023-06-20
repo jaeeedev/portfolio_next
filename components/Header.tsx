@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { Link } from "react-scroll";
+import ToggleMenu from "./ToggleMenu";
+import { motion, useCycle } from "framer-motion";
 
 interface WrapProps {
   two: boolean;
@@ -49,6 +51,16 @@ const HeaderLogo = styled.h1`
   margin: 0;
 `;
 
+const MotionDiv = styled(motion.div)`
+  height: 100%;
+  transform: translateY(10px);
+  display: none;
+  cursor: pointer;
+  @media screen and (max-width: 650px) {
+    display: block;
+  }
+`;
+
 const HeaderMenus = styled.ul<{ two: boolean }>`
   display: ${(props) => (props.two ? "flex" : "none")};
   gap: 20px;
@@ -64,17 +76,6 @@ const Li = styled.li<{ boldIndex: boolean }>`
   line-height: 47px;
   cursor: pointer;
   font-weight: 600;
-`;
-
-const MobileMenuIcon = styled.span`
-  display: none;
-  @media screen and (max-width: 650px) {
-    display: flex;
-    font-size: 22px;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-  }
 `;
 
 const MobileMenu = styled.ul<{ show: boolean }>`
@@ -103,6 +104,7 @@ const MobileMenuLi = styled.li`
 `;
 
 function Header({ boldIndex }: { boldIndex: number }) {
+  const [isOpen, toggleOpen] = useCycle(false, true);
   const [two, setTwo] = useState<boolean>(false);
   //스크롤 100픽셀 아래로 가면 true로 만들어버리기
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
@@ -149,9 +151,13 @@ function Header({ boldIndex }: { boldIndex: number }) {
             <Li boldIndex={boldIndex === 3}>CONTACT</Li>
           </Link>
         </HeaderMenus>
-        <MobileMenuIcon onClick={toggleMobileMenu}>
-          <GoThreeBars />
-        </MobileMenuIcon>
+        <MotionDiv
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          onClick={toggleMobileMenu}
+        >
+          <ToggleMenu toggle={() => toggleOpen()} />
+        </MotionDiv>
         <MobileMenu show={openMobileMenu}>
           <Link to="1" spy={true} smooth={true}>
             <MobileMenuLi boldIndex={boldIndex === 0}>INTRO</MobileMenuLi>

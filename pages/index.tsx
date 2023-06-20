@@ -2,11 +2,10 @@ import type { NextPage } from "next";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import Intro from "../components/Intro";
-import Skill from "../components/Skill";
+import Skills from "../components/Skills";
 import Footer from "../components/Footer";
 import Project from "../components/Project";
 import { NextSeo } from "next-seo";
-import Test from "../components/Test";
 
 const Home: NextPage = () => {
   const [boldIndex, setBoldIndex] = useState(0);
@@ -45,7 +44,7 @@ const Home: NextPage = () => {
 
       <Header boldIndex={boldIndex} />
       <Intro boldHandler={setBoldIndex} />
-      <Skill boldHandler={setBoldIndex} />
+      <Skills boldHandler={setBoldIndex} />
       <Project boldHandler={setBoldIndex} />
       <Footer boldHandler={setBoldIndex} />
     </div>
