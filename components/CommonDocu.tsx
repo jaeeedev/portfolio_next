@@ -7,7 +7,7 @@ import {
   ProjectTitle,
   SkillsBox,
   SkillBadge,
-} from "../styles/styled-components";
+} from "../styles/common";
 import List from "../components/List";
 import { useRouter } from "next/router";
 

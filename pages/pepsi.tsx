@@ -7,7 +7,7 @@ import {
   TextTitle,
   MainImgBox,
   Code,
-} from "../styles/styled-components";
+} from "../styles/common";
 import CommonDocu from "../components/CommonDocu";
 import styled, { css } from "styled-components";
 

@@ -208,16 +208,15 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           </StyledA>
 
           <ProjectText>
-            <TextTitle mb={"20px"}>ZERO PEPSI FINDER</TextTitle>
+            <TextTitle mb={"20px"}>마법의 소라고둥</TextTitle>
             <TextDetail>
-              현재 제로 펩시의 편의점별 할인 정보(1+1, 2+1)를 알려주는
-              페이지입니다. 다크모드와 라이트모드를 지원합니다.
+              스폰지밥에 나오는 마법의 소라고둥을 만들었습니다. 질문에 대해
+              랜덤하게 답을 하고 결과물은 사진으로 저장할 수 있습니다. 재미를
+              위한 인터랙션을 추가했습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
-            <TextDetail>
-              React, TypeScript, Styled-components, JavaScript, Node.js, Express
-            </TextDetail>
+            <TextDetail>Next.js, TypeScript, Recoil, framer-motion</TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
@@ -249,15 +248,17 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
             />
           </StyledA>
           <ProjectText>
-            <TextTitle mb={"20px"}>서울번드 리액트</TextTitle>
+            <TextTitle mb={"20px"}>pix</TextTitle>
             <TextDetail>
-              기존 자바스크립트 프로젝트를 조금 변경하여 리액트로 제작했습니다.
-              로그인, 장바구니 기능 등이 구현되어 있습니다.
+              간단한 쇼핑몰을 구현했습니다. firebase auth, firestore, storage를
+              통해 회원가입, 로그인, 장바구니, 제품 추가 기능을 구현하고 캐싱과
+              낙관적 업데이트를 위해 리액트 쿼리를 사용했습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
             <TextDetail>
-              React, React-router, Redux-toolkit, Styled-components, Firebase
+              React, TypeScript, React-router, Recoil, Tailwind CSS, Firebase,
+              React-Query
             </TextDetail>
 
             <TextTitle>보러 가기</TextTitle>
@@ -299,9 +300,8 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
           <ProjectText>
             <TextTitle mb={"20px"}>포트폴리오 페이지</TextTitle>
             <TextDetail>
-              현재 포트폴리오 페이지입니다. 기존에 리액트-리액트 라우터로
-              제작했던 페이지에 학습 목적으로 Next.js와 타입스크립트를
-              적용했습니다.
+              현재 포트폴리오 페이지입니다. 개인 정보와 프로젝트들이 기록되어
+              있습니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>

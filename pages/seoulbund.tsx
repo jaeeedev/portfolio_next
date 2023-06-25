@@ -9,7 +9,7 @@ import {
   MainLinkDesc,
   LinksContainer,
   Code,
-} from "../styles/styled-components";
+} from "../styles/common";
 import CommonDocu from "../components/CommonDocu";
 
 function SeoulBund() {

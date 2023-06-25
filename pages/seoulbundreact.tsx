@@ -10,7 +10,7 @@ import {
   ProjectImg,
   ImgContainer,
   Img,
-} from "../styles/styled-components";
+} from "../styles/common";
 import CommonDocu from "../components/CommonDocu";
 import styled from "styled-components";
 import Image from "next/image";

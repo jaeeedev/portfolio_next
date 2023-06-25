@@ -5,6 +5,11 @@ import useObserve from "../utils/useObserve";
 
 const Wrapper = styled.section`
   background: #f9f9fb;
+  background-size: 20px, 60px, 20px 20px, 60px 60px;
+  background-image: linear-gradient(90deg, #00000004 1px, transparent 1px),
+    linear-gradient(90deg, #00000004 1px, transparent 1px),
+    linear-gradient(#00000004 1px, transparent 1px),
+    linear-gradient(#00000004 1px, transparent 1px);
   padding: 30px;
   padding-top: 50px;
   margin-top: 100px;
