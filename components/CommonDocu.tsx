@@ -1,17 +1,15 @@
 import { NextSeo } from "next-seo";
 import PageHeader from "./PageHeader";
-import {
-  Container,
-  TitleHead,
-  ProjectSpan,
-  ProjectTitle,
-  SkillsBox,
-  SkillBadge,
-} from "../styles/common";
+import { Container, TitleHead } from "../styles/common";
 import List from "../components/List";
 import { useRouter } from "next/router";
 
-function CommonDocu({ arr, title }: { arr: string[]; title: string }) {
+interface Props {
+  arr: string[] | undefined;
+  title: string;
+}
+
+function CommonDocu({ arr, title }: Props) {
   const router = useRouter();
 
   return (
@@ -36,13 +34,15 @@ function CommonDocu({ arr, title }: { arr: string[]; title: string }) {
       <PageHeader />
       <Container>
         <TitleHead>
-          <ProjectSpan>프로젝트 설명</ProjectSpan>
-          <ProjectTitle>{title}</ProjectTitle>
-          <SkillsBox>
-            {arr.map((el) => (
-              <SkillBadge key={el}>{el}</SkillBadge>
+          <span className="post_span">프로젝트 설명</span>
+          <h1 className="post_title">{title}</h1>
+          <div className="post_skills">
+            {arr?.map((el) => (
+              <span className="skill" key={el}>
+                {el}
+              </span>
             ))}
-          </SkillsBox>
+          </div>
         </TitleHead>
         <List />
       </Container>

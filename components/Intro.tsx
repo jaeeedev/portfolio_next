@@ -35,11 +35,13 @@ const IntroGreetBox = styled.div`
     font-size: 17px;
     border-radius: 2rem;
     padding: 6px 15px 5px 15px;
-    background: #f1f1ff;
+    background: #f1feff;
     color: #4869ff;
+    mix-blend-mode: multiply;
   }
 
   .greet_main-text {
+    margin-top: 0.5rem;
     font-size: 47px;
     font-weight: 700;
     word-break: keep-all;
@@ -104,11 +106,6 @@ const InfoBox = styled.div`
     border-radius: 1rem;
     z-index: -1;
   }
-`;
-const Info = styled.div`
-  display: flex;
-  line-height: 1.9;
-  align-items: center;
 
   .info_title {
     min-width: 100px;
@@ -142,6 +139,7 @@ const DecoCircle = styled.div`
   animation: rotate 50s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
   z-index: -1;
   transition: all 0.5s;
+  overflow: hidden;
 
   @keyframes rotate {
     0% {
@@ -164,18 +162,28 @@ const IconWrap = styled.a`
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+`;
+
 function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
   const ref = useObserve(boldHandler, 0);
 
   return (
-    <div>
+    <Wrapper>
       <DecoCircle />
       <IntroContents ref={ref} id="1">
         <IntroGreetBox>
           <span>안녕하세요! </span>
-          <p className="greet_main-text">성장하는</p>
-          <p className="greet_main-text">프론트엔드 개발자</p>
-          <p className="greet_main-text">박지은입니다.</p>
+          <h1 className="greet_main-text">
+            성장하는
+            <br />
+            프론트엔드 개발자
+            <br />
+            박지은입니다.
+          </h1>
           <p className="greet_detail-text">
             <BsCheckCircleFill style={{ paddingTop: "3px" }} /> 사용자 관점에서
             생각하고 더 효율적인 방법을 고민합니다.
@@ -186,23 +194,23 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
         </IntroGreetBox>
 
         <InfoBox>
-          <Info>
+          <div className="info">
             <span className="info_title">이름</span>
             <span className="info_detail">박지은</span>
-          </Info>
-          <Info>
+          </div>
+          <div className="info">
             <span className="info_title">생년월일</span>
             <span className="info_detail">1997.06.13</span>
-          </Info>
-          <Info>
+          </div>
+          <div className="info">
             <span className="info_title">연락처</span>
             <span className="info_detail">010-2502-4223</span>
-          </Info>
-          <Info>
+          </div>
+          <div className="info">
             <span className="info_title">이메일</span>
             <span className="info_detail">wldms1107@gmail.com</span>
-          </Info>
-          <Info>
+          </div>
+          <div className="info">
             <span className="info_title">깃허브</span>
             <span className="info_detail">
               <IconWrap
@@ -213,8 +221,8 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
                 <BsGithub className="icon" />
               </IconWrap>
             </span>
-          </Info>
-          <Info>
+          </div>
+          <div className="info">
             <span className="info_title">블로그</span>
             <span className="info_detail">
               <IconWrap
@@ -225,10 +233,10 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
                 <FaExternalLinkAlt className="icon" />
               </IconWrap>
             </span>
-          </Info>
+          </div>
         </InfoBox>
       </IntroContents>
-    </div>
+    </Wrapper>
   );
 }
 

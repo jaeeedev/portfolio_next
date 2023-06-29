@@ -58,6 +58,7 @@ const MotionDiv = styled(motion.div)`
   cursor: pointer;
   @media screen and (max-width: 650px) {
     display: block;
+    width: 100%;
   }
 `;
 
@@ -155,6 +156,10 @@ function Header({ boldIndex }: { boldIndex: number }) {
           initial={false}
           animate={isOpen ? "open" : "closed"}
           onClick={toggleMobileMenu}
+          style={{
+            width: "fit-content",
+            height: "fit-content",
+          }}
         >
           <ToggleMenu toggle={() => toggleOpen()} />
         </MotionDiv>

@@ -1,11 +1,52 @@
 import styled from "styled-components";
 import Image from "next/image";
 
+export const Title = styled.h2`
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-family: "Poppins", Pretendard, sans-serif;
+
+  p {
+    padding-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+`;
+
 export const TitleHead = styled.div`
   margin-bottom: 20px;
   margin-top: 100px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ccc;
+
+  .post_span {
+    display: block;
+    color: #999;
+    margin-bottom: 7px;
+  }
+
+  .post_title {
+    font-size: 2.25rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .post_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    .skill {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      background: #e9ecef;
+      padding: 4px 7px;
+      border-radius: 2px;
+    }
+  }
 `;
 
 export const SkillsBox = styled.div`
@@ -43,6 +84,12 @@ export const ProjectTitle = styled.h1`
 export const ProjectText = styled.p`
   line-height: 1.6;
   margin: 25px 0;
+
+  a {
+    display: inline-block;
+    color: blue;
+    margin: 0 0.2rem;
+  }
 `;
 
 export const ProjectImg = styled(Image)`
@@ -100,8 +147,19 @@ export const ImgContainer = styled.div`
   margin: 0 auto;
   display: block;
   position: relative;
-  width: 100%;
+  width: 90%;
   height: fit-content;
+
+  video {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .sm_video {
+    display: block;
+    width: 60%;
+  }
 `;
 
 export const Img = styled(Image)`
