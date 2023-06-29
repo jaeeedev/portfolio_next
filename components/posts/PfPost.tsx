@@ -59,8 +59,7 @@ const PfPost = () => {
       </ProjectText>
       <ProjectText>
         페이지별로 적절한 타이틀과 정보가 나타나도록 <Code>next-seo</Code> 라는
-        라이브러리를 사용했습니다. 오픈그래프도 적용하여 외부로 링크를 보낼 때
-        썸네일과 정보가 보이도록 했습니다.
+        라이브러리를 사용했습니다.
       </ProjectText>
 
       <ProjectText>
