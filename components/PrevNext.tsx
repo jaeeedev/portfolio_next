@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { projects } from "../constants/projects";
 
 const Container = styled.div`
   display: flex;
@@ -36,39 +37,39 @@ const StyledLink = styled(Link)`
 `;
 
 interface PrevNextProps {
-  prev: string;
-  next: string;
-  pText: string;
-  nText: string;
+  index: number;
 }
 
-function PrevNext({ prev, next, pText, nText }: PrevNextProps) {
+function PrevNext({ index }: PrevNextProps) {
+  const prevInfo = projects.find((project) => index - 1 === project.index);
+  const nextInfo = projects.find((project) => index + 1 === project.index);
+
   return (
     <Container>
-      {prev !== "false" && (
+      {prevInfo && (
         <Left>
-          <StyledLink href={`/${prev}`}>
-            <BsArrowLeft style={{ fontSize: "22px" }} />
+          <StyledLink href={prevInfo.link}>
+            <BsArrowLeft size={22} />
           </StyledLink>
-          <StyledLink href={`/${prev}`}>
+          <StyledLink href={prevInfo.link}>
             <div>
               <PrevNextSpan>prev</PrevNextSpan>
-              <h3>{pText}</h3>
+              <h3>{prevInfo?.title}</h3>
             </div>
           </StyledLink>
         </Left>
       )}
 
-      {next !== "false" && (
+      {nextInfo && (
         <Right>
-          <StyledLink href={`/${next}`}>
+          <StyledLink href={nextInfo.link}>
             <div>
               <PrevNextSpan>next</PrevNextSpan>
-              <h3>{nText}</h3>
+              <h3>{nextInfo?.title}</h3>
             </div>
           </StyledLink>
-          <StyledLink href={`/${next}`}>
-            <BsArrowRight style={{ fontSize: "22px" }} />
+          <StyledLink href={nextInfo.link}>
+            <BsArrowRight size={22} />
           </StyledLink>
         </Right>
       )}

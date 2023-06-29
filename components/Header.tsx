@@ -155,6 +155,10 @@ function Header({ boldIndex }: { boldIndex: number }) {
           initial={false}
           animate={isOpen ? "open" : "closed"}
           onClick={toggleMobileMenu}
+          style={{
+            width: "fit-content",
+            height: "fit-content",
+          }}
         >
           <ToggleMenu toggle={() => toggleOpen()} />
         </MotionDiv>

@@ -3,7 +3,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import useObserve from "../utils/useObserve";
 
-const Wrapper = styled.section`
+const StyledFooter = styled.section`
   background: #f9f9fb;
   padding: 30px;
   padding-top: 50px;
@@ -13,13 +13,18 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
+  background-size: 20px, 60px, 20px 20px, 60px 60px;
+  background-image: linear-gradient(90deg, #00000004 1px, transparent 1px),
+    linear-gradient(90deg, #00000004 1px, transparent 1px),
+    linear-gradient(#00000004 1px, transparent 1px),
+    linear-gradient(#00000004 1px, transparent 1px);
 
-const Title = styled.h3`
-  font-family: "Poppins", Pretendard, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  .title {
+    font-family: "Poppins", Pretendard, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 `;
 
 const Text = styled.p<{ fz?: string }>`
@@ -35,9 +40,9 @@ function Footer({ boldHandler }: { boldHandler: (value: number) => void }) {
   const ref = useObserve(boldHandler, 3);
 
   return (
-    <Wrapper id="4" ref={ref}>
+    <StyledFooter id="4" ref={ref}>
       <div>
-        <Title>CONTACT</Title>
+        <h3 className="title">CONTACT</h3>
         <Text>
           <MdOutlineEmail style={{ fontSize: "21px" }} /> wldms1107@gmail.com
         </Text>
@@ -53,7 +58,7 @@ function Footer({ boldHandler }: { boldHandler: (value: number) => void }) {
           본 포트폴리오의 모든 제작물은 상업적 목적과 무관합니다.
         </Text>
       </div>
-    </Wrapper>
+    </StyledFooter>
   );
 }
 

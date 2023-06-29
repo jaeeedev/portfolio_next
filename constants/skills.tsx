@@ -15,6 +15,7 @@ export const skills = [
         <li>의미에 맞는 태그를 사용합니다.</li>
       </ul>
     ),
+    status: "familiar",
   },
   {
     title: "CSS",
@@ -25,6 +26,7 @@ export const skills = [
         <li>미디어 쿼리를 통한 반응형 레이아웃 구현이 가능합니다.</li>
       </ul>
     ),
+    status: "familiar",
   },
   {
     title: "JavaScript",
@@ -34,6 +36,7 @@ export const skills = [
         <li>ES6 문법을 사용합니다.</li>
       </ul>
     ),
+    status: "familiar",
   },
   {
     title: "React",
@@ -47,6 +50,7 @@ export const skills = [
         <li>tailwind css, styled-components 사용 경험이 있습니다.</li>
       </ul>
     ),
+    status: "familiar",
   },
   {
     title: "TypeScript",
@@ -59,6 +63,7 @@ export const skills = [
         </li>
       </ul>
     ),
+    status: "learning",
   },
   {
     title: "Next.js",
@@ -69,5 +74,6 @@ export const skills = [
         <li>현재 학습 중이며 일부 프로젝트에 적용되어 있습니다.</li>
       </ul>
     ),
+    status: "learning",
   },
 ];
