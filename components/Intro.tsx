@@ -139,6 +139,7 @@ const DecoCircle = styled.div`
   animation: rotate 50s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
   z-index: -1;
   transition: all 0.5s;
+  overflow: hidden;
 
   @keyframes rotate {
     0% {
@@ -161,11 +162,17 @@ const IconWrap = styled.a`
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+`;
+
 function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
   const ref = useObserve(boldHandler, 0);
 
   return (
-    <div>
+    <Wrapper>
       <DecoCircle />
       <IntroContents ref={ref} id="1">
         <IntroGreetBox>
@@ -229,7 +236,7 @@ function Intro({ boldHandler }: { boldHandler: (value: number) => void }) {
           </div>
         </InfoBox>
       </IntroContents>
-    </div>
+    </Wrapper>
   );
 }
 

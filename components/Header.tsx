@@ -58,6 +58,7 @@ const MotionDiv = styled(motion.div)`
   cursor: pointer;
   @media screen and (max-width: 650px) {
     display: block;
+    width: 100%;
   }
 `;
 

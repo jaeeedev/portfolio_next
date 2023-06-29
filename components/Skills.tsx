@@ -1,7 +1,74 @@
 import styled from "styled-components";
 import Image from "next/image";
 import useObserve from "../utils/useObserve";
-import { skills } from "../constants/skills";
+import { skills, extraSkills } from "../constants/skills";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+type SkillStatus = "familiar" | "learning" | "beginner";
+
+function Skills({ boldHandler }: { boldHandler: (value: number) => void }) {
+  const ref = useObserve(boldHandler, 1);
+
+  return (
+    <Wrapper id="2" ref={ref}>
+      <Contents>
+        <MainTitle>SKILL</MainTitle>
+
+        <SkillSection>
+          {skills.map((skill) => (
+            <div className="skill_box" key={skill.title}>
+              <div className="skill_img">
+                <Image
+                  alt="html 로고"
+                  src={skill.imgSrc}
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <div>
+                <div className="skill_title">{skill.title}</div>
+                <Status st={skill.status as SkillStatus}>{skill.status}</Status>
+                {skill.description}
+              </div>
+            </div>
+          ))}
+        </SkillSection>
+
+        {/* <ExtraSkills /> */}
+      </Contents>
+    </Wrapper>
+  );
+}
+
+const ExtraSkills = () => {
+  const [expand, setExpand] = useState(false);
+  return (
+    <div>
+      <ExtraWrapper>
+        {extraSkills.map((skill) => (
+          <div className="skill_box" key={skill.title}>
+            <div className="skill_img">
+              <Image
+                alt="html 로고"
+                src={skill.imgSrc}
+                width={100}
+                height={100}
+              />
+            </div>
+            <div>
+              <div className="skill_title">{skill.title}</div>
+              <Status st={skill.status as SkillStatus}>{skill.status}</Status>
+              {skill.description}
+            </div>
+          </div>
+        ))}
+      </ExtraWrapper>
+    </div>
+  );
+};
+
+export default Skills;
 
 const Wrapper = styled.div`
   background: #f9f9fb;
@@ -81,12 +148,23 @@ const SkillSection = styled.div`
   }
 `;
 
-const Status = styled.span<{ st?: boolean }>`
+const Status = styled.span<{ st: SkillStatus }>`
   //상태 프롭따라 색상 다름
   display: inline-block;
   padding: 4px 10px;
-  background: ${(props) => (props.st ? "#f0f9ff" : "#f0fdf4")};
-  color: ${(props) => (props.st ? "#0284c7" : "#16a34a")};
+  background: ${(props) => {
+    return props.st === "familiar"
+      ? "#f0f9ff"
+      : props.st === "learning"
+      ? "#f0fdf4"
+      : "#f8fafc";
+  }};
+  color: ${(props) =>
+    props.st === "familiar"
+      ? "#0284c7"
+      : props.st === "learning"
+      ? "#16a34a"
+      : "#64748b"};
   border-radius: 1rem;
   margin: 7px 0 9px 0;
   font-size: 14px;
@@ -100,36 +178,6 @@ const MainTitle = styled.h2`
   margin-bottom: 30px;
 `;
 
-function Skills({ boldHandler }: { boldHandler: (value: number) => void }) {
-  const ref = useObserve(boldHandler, 1);
-
-  return (
-    <Wrapper id="2" ref={ref}>
-      <Contents>
-        <MainTitle>SKILL</MainTitle>
-
-        <SkillSection>
-          {skills.map((skill) => (
-            <div className="skill_box" key={skill.title}>
-              <div className="skill_img">
-                <Image
-                  alt="html 로고"
-                  src={skill.imgSrc}
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div>
-                <div className="skill_title">{skill.title}</div>
-                <Status st={skill.status === "learning"}>{skill.status}</Status>
-                {skill.description}
-              </div>
-            </div>
-          ))}
-        </SkillSection>
-      </Contents>
-    </Wrapper>
-  );
-}
-
-export default Skills;
+const ExtraWrapper = styled(SkillSection)`
+  margin-top: 1rem;
+`;

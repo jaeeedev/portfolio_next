@@ -4,6 +4,8 @@ import js from "../assets/images/js.png";
 import react from "../assets/images/react.png";
 import ts from "../assets/images/ts.png";
 import next from "../assets/images/next.png";
+import firebase from "../assets/images/firebase.png";
+import express from "../assets/images/express.png";
 
 export const skills = [
   {
@@ -75,5 +77,29 @@ export const skills = [
       </ul>
     ),
     status: "learning",
+  },
+];
+
+export const extraSkills = [
+  {
+    title: "Firebase",
+    imgSrc: firebase,
+    description: (
+      <ul>
+        <li>firestore, storage, auth 사용 경험이 있습니다.</li>
+        <li>공식 문서를 참고하여 코드를 작성할 수 있습니다.</li>
+      </ul>
+    ),
+    status: "learning",
+  },
+  {
+    title: "Express",
+    imgSrc: express,
+    description: (
+      <ul>
+        <li>간단한 crud를 구현할 수 있습니다.</li>
+      </ul>
+    ),
+    status: "beginner",
   },
 ];
