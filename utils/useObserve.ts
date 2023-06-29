@@ -4,6 +4,7 @@ function useObserve(boldHandler: (index: number) => void, index: number) {
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    if (!ref.current) return;
     const cb: IntersectionObserverCallback = ([entry]): void => {
       if (entry.isIntersecting) {
         boldHandler(index);
@@ -16,9 +17,12 @@ function useObserve(boldHandler: (index: number) => void, index: number) {
       threshold: 0.3,
     });
 
-    if (ref.current) {
-      io.observe(ref.current);
-    }
+    io.observe(ref.current);
+
+    return () => {
+      if (!ref.current) return;
+      io.unobserve(ref.current);
+    };
   }, []);
 
   return ref;

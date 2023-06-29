@@ -1,22 +1,23 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import { projects } from "../constants/projects";
 
 const Container = styled.div`
   background: #f3f3f3;
   padding: 30px;
-  margin-bottom: 40px;
+  border-radius: 0.5rem;
 `;
 
 const Li = styled.li`
-  font-weight: ${({ bold }: { bold: boolean }) => bold && "700"};
-  font-size: ${({ bold }) => bold && "17px"};
-  margin-left: 20px;
-  padding: 2px 0;
+  font-weight: ${({ bold }: { bold: boolean }) => (bold ? "800" : "500")};
+  font-size: ${({ bold }) => (bold ? "18px" : "17px")};
+  margin-left: 0.5rem;
+  padding: 1px 0;
 `;
 
 const ListTitle = styled.h3`
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 20px;
 `;
 
@@ -27,25 +28,18 @@ const ListLink = styled(Link)`
 `;
 
 function List() {
-  const router = useRouter();
-  const param = router.pathname.replace("/", "");
+  const { query } = useRouter();
+  const currentPath = "/" + query.project;
 
   return (
     <Container>
       <ListTitle>프로젝트 목록</ListTitle>
       <ol>
-        <Li bold={param === "pot"}>
-          <ListLink href="/pot">Pot</ListLink>
-        </Li>
-        <Li bold={param === "pepsi"}>
-          <ListLink href="/pepsi">ZERO PEPSI FINDER</ListLink>
-        </Li>
-        <Li bold={param === "seoulbundreact"}>
-          <ListLink href="/seoulbundreact">서울번드 리액트</ListLink>
-        </Li>
-        <Li bold={param === "portfolio"}>
-          <ListLink href="/portfolio">포트폴리오 페이지</ListLink>
-        </Li>
+        {projects.map((project) => (
+          <Li key={project.index} bold={currentPath === project.link}>
+            <ListLink href={project.link}>{project.title}</ListLink>
+          </Li>
+        ))}
       </ol>
     </Container>
   );

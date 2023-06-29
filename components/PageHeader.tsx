@@ -14,8 +14,8 @@ const Inner = styled.div`
   left: 0;
 `;
 
-const GoToMain = styled.span`
-  display: block;
+const GoToMain = styled(Link)`
+  display: inline-block;
   padding: 10px;
   font-size: 22px;
   font-weight: 700;
@@ -28,11 +28,9 @@ const GoToMain = styled.span`
 function PageHeader() {
   return (
     <header>
-      <Link href="/" legacyBehavior>
-        <Inner>
-          <GoToMain>GO TO MAIN</GoToMain>
-        </Inner>
-      </Link>
+      <Inner>
+        <GoToMain href={"/"}>GO TO MAIN</GoToMain>
+      </Inner>
     </header>
   );
 }
