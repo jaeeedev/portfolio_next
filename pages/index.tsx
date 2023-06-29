@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           description: "프론트엔드 개발자 박지은 포트폴리오 페이지입니다.",
           images: [
             {
-              url: "../assets/images/pf-main.png",
+              url: "/imgs/pf-main.png",
               width: 800,
               height: 400,
             },
