@@ -6,7 +6,7 @@ import useInfo from "../utils/useInfo";
 
 function Project() {
   useEffect(() => {
-    // window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0 });
   }, []);
 
   const projectInfo = useInfo();
