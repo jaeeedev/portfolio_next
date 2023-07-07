@@ -44,10 +44,7 @@ function Project({ boldHandler }: { boldHandler: (value: number) => void }) {
   return (
     <div>
       <ProjectContents ref={ref} id="3">
-        <Title>
-          PROJECT
-          <p>사진을 클릭하면 프로젝트 설명 페이지로 이동합니다.</p>
-        </Title>
+        <Title>PROJECT</Title>
 
         <ProjectItemBox
           ref={(el) => {
