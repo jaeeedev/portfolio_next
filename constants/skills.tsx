@@ -13,7 +13,6 @@ export const skills = [
     imgSrc: html,
     description: (
       <ul>
-        <li>화면 마크업이 가능합니다.</li>
         <li>의미에 맞는 태그를 사용합니다.</li>
       </ul>
     ),
@@ -24,7 +23,6 @@ export const skills = [
     imgSrc: css,
     description: (
       <ul>
-        <li>flex 속성을 사용하여 스타일링 합니다.</li>
         <li>미디어 쿼리를 통한 반응형 레이아웃 구현이 가능합니다.</li>
       </ul>
     ),
@@ -35,7 +33,10 @@ export const skills = [
     imgSrc: js,
     description: (
       <ul>
-        <li>ES6 문법을 사용합니다.</li>
+        <li>ES6+ 문법을 사용합니다.</li>
+        <li>
+          promise, async/await 문법으로 서버에 요청을 주고받을 수 있습니다.
+        </li>
       </ul>
     ),
     status: "familiar",
@@ -59,10 +60,10 @@ export const skills = [
     imgSrc: ts,
     description: (
       <ul>
-        <li>type, interface를 사용하여 타입을 분리할 수 있습니다.</li>
         <li>
           기본 자료형과 인덱스 시그니처, unknown 타입에 대해 알고 있습니다.
         </li>
+        <li>type, interface를 사용하여 타입을 분리할 수 있습니다.</li>
       </ul>
     ),
     status: "learning",
@@ -72,8 +73,8 @@ export const skills = [
     imgSrc: next,
     description: (
       <ul>
-        <li>getStaticProps와 getServerSideProps의 차이를 알고 있습니다.</li>
-        <li>현재 학습 중이며 일부 프로젝트에 적용되어 있습니다.</li>
+        <li>공부하는 단계로 Next.js의 장점과 특징을 알고 있습니다.</li>
+        <li>일부 프로젝트에 적용되어 있습니다.</li>
       </ul>
     ),
     status: "learning",
