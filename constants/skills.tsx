@@ -77,7 +77,7 @@ export const skills = [
         <li>일부 프로젝트에 적용되어 있습니다.</li>
       </ul>
     ),
-    status: "learning",
+    status: "beginner",
   },
 ];
 
@@ -93,14 +93,14 @@ export const extraSkills = [
     ),
     status: "learning",
   },
-  {
-    title: "Express",
-    imgSrc: express,
-    description: (
-      <ul>
-        <li>간단한 crud를 구현할 수 있습니다.</li>
-      </ul>
-    ),
-    status: "beginner",
-  },
+  // {
+  //   title: "Express",
+  //   imgSrc: express,
+  //   description: (
+  //     <ul>
+  //       <li>간단한 crud를 구현할 수 있습니다.</li>
+  //     </ul>
+  //   ),
+  //   status: "beginner",
+  // },
 ];
